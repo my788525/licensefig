@@ -1,14 +1,10 @@
 /**
  * Web3Forms configuration — https://web3forms.com
  *
- * HOW TO ACTIVATE (one-time, ~2 minutes):
- * 1. Open https://web3forms.com and enter any email address (e.g. team@licensefig.com
- *    or a personal inbox) — you will receive an access key by email.
- * 2. Replace ACCESS_KEY below with the key you received.
- * 3. Rebuild and push. The /contact/ form goes live.
- *
- * The access key is public by design (Web3Forms protects submissions via
- * honeypot + optional reCAPTCHA, not by keeping the key secret).
+ * Access key is active (registered 2026-08-20). The key is public by design
+ * (Web3Forms protects submissions via honeypot + optional reCAPTCHA, not by
+ * keeping the key secret). To switch the receiving inbox, register a new key
+ * at https://web3forms.com and replace ACCESS_KEY below.
  */
-export const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY'
+export const WEB3FORMS_ACCESS_KEY = '72efa0d6-c588-452d-9732-1097c2e89c8a'
 export const CONTACT_EMAIL = 'team@licensefig.com'
