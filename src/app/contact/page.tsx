@@ -14,7 +14,7 @@ export default function ContactPage() {
     const data = new FormData(form)
     const payload: Record<string, string> = {
       access_key: WEB3FORMS_ACCESS_KEY,
-      subject: data.get('subject') as string,
+      subject: `[licensefig.com] ${data.get('subject') as string}`,
       from_name: data.get('name') as string,
       email: data.get('email') as string,
       message: data.get('message') as string,
