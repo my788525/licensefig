@@ -8,7 +8,8 @@ import { getRequirement } from '@/data/requirements'
 // guide pages ("How to become a X in [State]"). Every page is data-driven:
 // ≥8 real fields from the requirements dataset → pages differ by real numbers,
 // not template swaps. Missing fields render "verify with your state board".
-const TOP_STATES = ['CA', 'TX', 'FL', 'NY', 'PA', 'IL', 'OH', 'GA', 'NC', 'MI', 'NJ', 'VA', 'WA', 'AZ', 'MA', 'TN', 'IN', 'MO', 'MD', 'WI']
+// All 50 states + DC: full long-tail coverage
+const TOP_STATES = STATES.map((x) => x.code)
 
 interface Props {
   params: { occupationSlug: string; stateCode: string }
@@ -97,6 +98,19 @@ export default async function LicensingGuidePage({ params }: Props) {
         <p className="text-sm text-slate-500 mb-8">
           {occ.description} Requirements change — always confirm with {d?.officialName ?? 'the state board'} before paying.
         </p>
+
+        {/* L4 long-tail variants */}
+        <div className="flex flex-wrap gap-2 mb-8">
+          <Link href={`/licensing-guides/${occ.slug}/${st.code}/cost/`} className="px-3 py-1.5 rounded-full border border-slate-200 text-xs hover:border-[#1b4b8f]">
+            License cost
+          </Link>
+          <Link href={`/licensing-guides/${occ.slug}/${st.code}/difficulty/`} className="px-3 py-1.5 rounded-full border border-slate-200 text-xs hover:border-[#1b4b8f]">
+            Exam difficulty
+          </Link>
+          <Link href={`/licensing-guides/${occ.slug}/${st.code}/retake/`} className="px-3 py-1.5 rounded-full border border-slate-200 text-xs hover:border-[#1b4b8f]">
+            Retake rules
+          </Link>
+        </div>
 
         <h2 className="section-title mb-4">Licensing steps in {st.name}</h2>
         <ol className="space-y-4 mb-10">

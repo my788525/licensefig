@@ -3,7 +3,8 @@ import { OCCUPATIONS, STATES } from '@/data/types'
 
 const baseUrl = 'https://licensefig.com'
 
-const TOP_STATES = ['CA', 'TX', 'FL', 'NY', 'PA', 'IL', 'OH', 'GA', 'NC', 'MI', 'NJ', 'VA', 'WA', 'AZ', 'MA', 'TN', 'IN', 'MO', 'MD', 'WI']
+// All 50 states + DC
+const TOP_STATES = STATES.map((x) => x.code)
 
 const TOOL_SLUGS = [
   'requirements-lookup', 'study-plan-generator', 'prep-budget', 'retake-interval',
@@ -42,6 +43,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const guideUrls: MetadataRoute.Sitemap = []
+  const variantUrls: MetadataRoute.Sitemap = []
+  const VARIANT_VIEWS = ['cost', 'difficulty', 'retake']
   for (const occ of OCCUPATIONS) {
     for (const sc of TOP_STATES) {
       guideUrls.push({
@@ -50,8 +53,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: 'monthly',
         priority: 0.75,
       })
+      for (const view of VARIANT_VIEWS) {
+        variantUrls.push({
+          url: `${baseUrl}/licensing-guides/${occ.slug}/${sc}/${view}/`,
+          lastModified: now,
+          changeFrequency: 'monthly',
+          priority: 0.7,
+        })
+      }
     }
   }
 
-  return [...staticUrls, ...occupationUrls, ...toolUrls, ...guideUrls]
+  // L3 content wave — deep guides + sub-dimension data pages (2026-08-20)
+  const deepUrls: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/guides/cna-free-training/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/guides/exam-changes-2026/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+  ]
+  for (const occ of OCCUPATIONS) {
+    deepUrls.push({
+      url: `${baseUrl}/guides/${occ.slug}/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    })
+    deepUrls.push({
+      url: `${baseUrl}/pass-rates/${occ.slug}/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    })
+    deepUrls.push({
+      url: `${baseUrl}/exam-costs/${occ.slug}/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    })
+    deepUrls.push({
+      url: `${baseUrl}/reciprocity/${occ.slug}/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    })
+  }
+
+  return [...staticUrls, ...occupationUrls, ...toolUrls, ...guideUrls, ...variantUrls, ...deepUrls]
 }
