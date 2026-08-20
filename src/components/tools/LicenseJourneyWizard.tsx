@@ -1,9 +1,13 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { OCCUPATIONS, STATES, getOccupation } from '@/data/types'
 import { getRequirement } from '@/data/requirements'
 import { stateFromZip } from '@/lib/zip-states'
+
+const DEFAULT_OCCUPATION = 'real-estate-salesperson'
+const DEFAULT_STATE = 'CA'
+const ZIP_RE = /^\d{5}$/
 
 /**
  * LicenseJourneyWizard — the full license lifecycle planner.
@@ -24,9 +28,43 @@ interface Stage {
 const STUDY_HOURS_PER_WEEK = 20 // planning assumption
 
 export default function LicenseJourneyWizard() {
-  const [occupationId, setOccupationId] = useState('real-estate-salesperson')
-  const [stateCode, setStateCode] = useState('CA')
+  const [occupationId, setOccupationId] = useState(DEFAULT_OCCUPATION)
+  const [stateCode, setStateCode] = useState(DEFAULT_STATE)
   const [zip, setZip] = useState('')
+  const [copied, setCopied] = useState(false)
+
+  // Initialize from URL params on mount (?career=&state=&zip=) so the planner
+  // is shareable and bookmarkable. Invalid values fall back to defaults.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const career = params.get('career')
+    if (career && getOccupation(career)) setOccupationId(career)
+    const state = params.get('state')
+    if (state && STATES.some((s) => s.code === state)) setStateCode(state)
+    const zipParam = params.get('zip')
+    if (zipParam && ZIP_RE.test(zipParam)) setZip(zipParam)
+  }, [])
+
+  // Keep the URL in sync with user changes (replaceState — no history spam).
+  useEffect(() => {
+    const params = new URLSearchParams()
+    params.set('career', occupationId)
+    params.set('state', stateCode)
+    if (ZIP_RE.test(zip)) params.set('zip', zip)
+    window.history.replaceState(null, '', `${window.location.pathname}?${params.toString()}`)
+  }, [occupationId, stateCode, zip])
+
+  const copyLink = async () => {
+    const url = window.location.href
+    try {
+      await navigator.clipboard.writeText(url)
+      setCopied(true)
+    } catch {
+      window.prompt('Copy this link:', url)
+    } finally {
+      window.setTimeout(() => setCopied(false), 2000)
+    }
+  }
 
   const occ = getOccupation(occupationId) ?? OCCUPATIONS[0]
   const st = STATES.find((s) => s.code === stateCode)
@@ -156,8 +194,14 @@ export default function LicenseJourneyWizard() {
             </button>
           </div>
         </div>
-        <div className="flex items-end">
+        <div className="flex flex-col items-stretch gap-2">
           <button onClick={() => window.print()} className="btn-cta w-full justify-center">Print roadmap</button>
+          <button
+            onClick={copyLink}
+            className="px-3 py-2 rounded-lg border border-slate-300 bg-white text-xs font-semibold text-slate-700 hover:border-[#1b4b8f] hover:text-[#1b4b8f] whitespace-nowrap"
+          >
+            {copied ? 'Copied!' : 'Copy link'}
+          </button>
         </div>
       </div>
 

@@ -141,12 +141,29 @@ const OCCUPATION_HINTS: Record<string, string[]> = {
 
 const STORAGE_KEY = 'licensefig_progress_v1'
 
+const stepIndex = (title: string) => BASE_STEPS.indexOf(title) + 1
+
 export default function LicenseProgressTracker() {
   const [occupationId, setOccupationId] = useState('real-estate-salesperson')
   const [done, setDone] = useState<string[]>([])
+  const [copied, setCopied] = useState(false)
 
-  // Persist checkboxes locally; safe for the static export.
+  // Load progress: URL params first (?step=1,2,4&career=cna), then localStorage.
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const career = params.get('career')
+    if (career && OCCUPATIONS.some((o) => o.id === career)) setOccupationId(career)
+    const stepParam = params.get('step')
+    if (stepParam) {
+      const steps = stepParam
+        .split(',')
+        .map((n) => parseInt(n, 10))
+        .filter((n) => n >= 1 && n <= BASE_STEPS.length)
+      if (steps.length) {
+        setDone(steps.map((n) => BASE_STEPS[n - 1]))
+        return
+      }
+    }
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY)
       if (raw) setDone(JSON.parse(raw))
@@ -155,13 +172,31 @@ export default function LicenseProgressTracker() {
     }
   }, [])
 
+  // Persist locally and sync the URL in one effect.
   useEffect(() => {
     try {
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(done))
     } catch {
       /* private mode — ignore */
     }
-  }, [done])
+    const params = new URLSearchParams()
+    params.set('career', occupationId)
+    const steps = done.map(stepIndex).filter((n) => n > 0).sort((a, b) => a - b)
+    if (steps.length) params.set('step', steps.join(','))
+    window.history.replaceState(null, '', `${window.location.pathname}?${params.toString()}`)
+  }, [done, occupationId])
+
+  const copyLink = async () => {
+    const url = window.location.href
+    try {
+      await navigator.clipboard.writeText(url)
+      setCopied(true)
+    } catch {
+      window.prompt('Copy this link:', url)
+    } finally {
+      window.setTimeout(() => setCopied(false), 2000)
+    }
+  }
 
   const occ = OCCUPATIONS.find((o) => o.id === occupationId) ?? OCCUPATIONS[0]
   const hints = OCCUPATION_HINTS[occ.id] ?? BASE_STEPS.map(() => 'Check your state board for exact requirements.')
@@ -191,8 +226,8 @@ export default function LicenseProgressTracker() {
           </select>
         </label>
         <p className="text-sm text-slate-500">
-          Tap each step as you complete it. Your progress is saved in this browser only. Print the card below
-          to keep your license road visible.
+          Tap each step as you complete it. Your progress is saved in this browser and in the page link,
+          so you can share or reopen it on any device. Print the card below to keep your license road visible.
         </p>
       </div>
 
@@ -257,6 +292,13 @@ export default function LicenseProgressTracker() {
 
       <div className="no-print mt-4 flex items-center gap-3">
         <PrintButton label="Print / Save this road card" />
+        <button
+          type="button"
+          onClick={copyLink}
+          className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:border-indigo-400 hover:text-indigo-600"
+        >
+          {copied ? 'Copied!' : 'Copy link'}
+        </button>
         <button
           type="button"
           onClick={() => setDone([])}

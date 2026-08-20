@@ -9,6 +9,15 @@ const SITE = {
   domain: 'https://licensefig.com',
 }
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'LicenseFig',
+  url: 'https://licensefig.com',
+  description:
+    'Free planning resource for the licensing road: state-by-state license requirements, exam structure, costs, pass rates, retake rules and reciprocity for 15 licensed careers.',
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://licensefig.com'),
   title: { default: 'LicenseFig — License Requirements & Exam Planning for 15 Licensed Careers', template: '%s | LicenseFig' },
@@ -27,6 +36,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="bg-[#f8f9fb] text-[#1a2233] antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <header className="bg-white border-b-2 border-[#0b2545] sticky top-0 z-40 no-print">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <Link href="/" aria-label="LicenseFig home" className="group">
@@ -78,11 +91,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <Link href="/data/" className="block text-slate-300 hover:text-white">Open data</Link>
                   <Link href="/pass-rates/" className="block text-slate-300 hover:text-white">Pass rates</Link>
                   <Link href="/reciprocity/" className="block text-slate-300 hover:text-white">Reciprocity</Link>
+                  <Link href="/methodology/" className="block text-slate-300 hover:text-white">Methodology</Link>
                   <Link href="/about/" className="block text-slate-300 hover:text-white">About</Link>
                   <Link href="/privacy/" className="block text-slate-300 hover:text-white">Privacy</Link>
                   <Link href="/terms/" className="block text-slate-300 hover:text-white">Terms</Link>
                 </div>
               </div>
+            </div>
+            <div className="border-t border-slate-700 pt-5 mb-5 text-sm">
+              <span className="text-slate-400">Related planning tools: </span>
+              <span className="inline-flex flex-wrap gap-x-4 gap-y-1">
+                <a href="https://unitfig.com" rel="nofollow noopener noreferrer" className="text-slate-300 hover:text-white">UnitFig</a>
+                <a href="https://edcost.com" rel="nofollow noopener noreferrer" className="text-slate-300 hover:text-white">EdCost</a>
+                <a href="https://wikest.com" rel="nofollow noopener noreferrer" className="text-slate-300 hover:text-white">WikEst</a>
+                <a href="https://paycalcfig.com" rel="nofollow noopener noreferrer" className="text-slate-300 hover:text-white">PayCalcFig</a>
+                <a href="https://insurtool.com" rel="nofollow noopener noreferrer" className="text-slate-300 hover:text-white">InsurTool</a>
+                <a href="https://relofig.com" rel="nofollow noopener noreferrer" className="text-slate-300 hover:text-white">ReloFig</a>
+              </span>
             </div>
             <div className="border-t border-slate-700 pt-5 text-xs text-slate-500 flex flex-col md:flex-row justify-between gap-2">
               <span>© 2026 LicenseFig. Data retrieved 2026-08-20 from state boards, PSI, Pearson VUE and CMS.</span>
