@@ -6,6 +6,14 @@
 // guards. Most states have no written exam (registration only); published
 // pass rates are rare. Retrieved 2026-08-20.
 // Unknown fields are omitted (UI renders "verify with your state board").
+//
+// Fee additions verified 2026-08-20 via official sources:
+//   NY — applicationFee $36 (DOS security guard registration)
+//        https://dos.ny.gov/become-security-guard
+//   TX — applicationFee $30 (DPS non-commissioned Level II: $30 app + $5 pocket card + $2 subscription)
+//        https://www.txdps.state.tx.us (Private Security Fee Schedule)
+//   FL — licenseFee $45 (Class D Security Officer), renewal 2 yr (Ch. 493, F.S.)
+//        https://www.fdacs.gov (License Fees)
 // ============================================================================
 
 import type { LicenseRequirements } from '../types';
@@ -24,18 +32,22 @@ export const security_guardRequirements: LicenseRequirements[] = [
   {
     occupationId: 'security-guard', stateCode: 'FL', retrieved: RETRIEVED,
     educationHours: 40, ageMinimum: 18, backgroundCheck: true,
+    licenseFee: 45,
+    renewal: { years: 2 },
     officialName: 'Florida Department of Agriculture and Consumer Services — Division of Licensing',
     officialUrl: 'https://www.fdacs.gov',
   },
   {
     occupationId: 'security-guard', stateCode: 'TX', retrieved: RETRIEVED,
     educationHours: 6, ageMinimum: 18, backgroundCheck: true,
+    applicationFee: 30,
     officialName: 'Texas Department of Public Safety — Private Security Bureau',
     officialUrl: 'https://www.txdps.state.tx.us',
   },
   {
     occupationId: 'security-guard', stateCode: 'NY', retrieved: RETRIEVED,
     educationHours: 8, ageMinimum: 18, backgroundCheck: true,
+    applicationFee: 36,
     renewal: { years: 2 },
     officialName: 'New York Department of State — Division of Licensing Services',
     officialUrl: 'https://dos.ny.gov',

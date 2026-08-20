@@ -19,7 +19,7 @@ export function PrintButton() {
 
 export function Disclaimer({ children }: { children?: ReactNode }) {
   return (
-    <p className="no-print mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-800">
+    <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-800 print:border-slate-300 print:bg-white print:text-slate-600">
       {children ?? 'Requirements change — verify with your state board before applying.'}
     </p>
   )

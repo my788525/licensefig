@@ -4,6 +4,13 @@
 // beauty training track (100–600 hours). Written + practical ("State board")
 // exam typical. Unknown fields omitted (UI renders "verify with your state
 // board"). Retrieved 2026-08-20.
+//
+// Fee/renewal additions verified 2026-08-20 via official sources:
+//   CA — examFee $75, licenseFee $35, renewal 2 yr  CA Code Regs. Title 16 §998
+//        https://shared-govt.westlaw.com/calregs/Document/IE9BFA7B076C211F0A403A5163E2D806C
+//   NY — app fee $40, license/renewal $40, exam $15 written + $15 practical,
+//        4-yr term (corrected from 3)  https://dos.ny.gov/node/64686
+//   TX — applicationFee $50  https://www.tdlr.texas.gov/barbering-and-cosmetology/
 // ============================================================================
 
 import type { LicenseRequirements } from '../types';
@@ -16,7 +23,7 @@ export const nail_technicianRequirements: LicenseRequirements[] = [
   { occupationId: 'nail-technician', stateCode: 'AK', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Alaska Board of Barbers and Hairdressers — Nail Technician', officialUrl: 'https://www.commerce.alaska.gov/web/cbpl', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'AZ', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Arizona State Board of Cosmetology — Nail Technology', officialUrl: 'https://cosmetology.az.gov', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'AR', educationHours: 600, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Arkansas State Board of Cosmetology — Nail Technology', officialUrl: 'https://www.arkcosmetology.org', retrieved: RETRIEVED },
-  { occupationId: 'nail-technician', stateCode: 'CA', educationHours: 400, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, renewal: { years: 2 }, officialName: 'California Board of Barbering and Cosmetology — Nail Care', officialUrl: 'https://www.barbercosmo.ca.gov', retrieved: RETRIEVED },
+  { occupationId: 'nail-technician', stateCode: 'CA', educationHours: 400, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, renewal: { years: 2 }, exam: { examFee: 75 }, licenseFee: 35, officialName: 'California Board of Barbering and Cosmetology — Nail Care', officialUrl: 'https://www.barbercosmo.ca.gov', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'CO', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Colorado Office of Barber and Cosmetology Licensure — Nail Technician', officialUrl: 'https://dpo.colorado.gov/BarberCosmetology', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'CT', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Connecticut Department of Public Health — Nail Technician', officialUrl: 'https://portal.ct.gov/DPH', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'DE', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Delaware Board of Cosmetology and Barbering — Nail Technician', officialUrl: 'https://dpr.delaware.gov', retrieved: RETRIEVED },
@@ -44,7 +51,7 @@ export const nail_technicianRequirements: LicenseRequirements[] = [
   { occupationId: 'nail-technician', stateCode: 'NH', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'New Hampshire Board of Barbering and Cosmetology — Nail Technician', officialUrl: 'https://www.oplc.nh.gov', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'NJ', educationHours: 300, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'New Jersey Board of Cosmetology and Hairstyling — Nail Technician', officialUrl: 'https://www.njconsumeraffairs.gov', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'NM', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'New Mexico Board of Barbers and Cosmetologists — Nail Technician', officialUrl: 'https://www.rld.nm.gov', retrieved: RETRIEVED },
-  { occupationId: 'nail-technician', stateCode: 'NY', educationHours: 250, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, renewal: { years: 3 }, officialName: 'New York State Board of Cosmetology — Nail Specialty', officialUrl: 'https://dos.ny.gov', retrieved: RETRIEVED },
+  { occupationId: 'nail-technician', stateCode: 'NY', educationHours: 250, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, renewal: { years: 4 }, applicationFee: 40, licenseFee: 40, exam: { examFee: 15 }, officialName: 'New York State Board of Cosmetology — Nail Specialty', officialUrl: 'https://dos.ny.gov', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'NC', educationHours: 600, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'North Carolina State Board of Cosmetic Art Examiners — Manicurist/Nail Technician', officialUrl: 'https://www.nccosmeticarts.com', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'ND', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'North Dakota State Board of Cosmetology — Nail Technician', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'OH', educationHours: 200, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Ohio State Cosmetology Board — Manicurist', officialUrl: 'https://cos.ohio.gov', retrieved: RETRIEVED },
@@ -55,7 +62,7 @@ export const nail_technicianRequirements: LicenseRequirements[] = [
   { occupationId: 'nail-technician', stateCode: 'SC', educationHours: 400, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'South Carolina Board of Cosmetology — Nail Technician', officialUrl: 'https://llr.sc.gov', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'SD', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'South Dakota Cosmetology Commission — Nail Technician', officialUrl: 'https://dlr.sd.gov', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'TN', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Tennessee Board of Cosmetology and Barber Examiners — Nail Technician', officialUrl: 'https://www.tn.gov/commerce', retrieved: RETRIEVED },
-  { occupationId: 'nail-technician', stateCode: 'TX', educationHours: 600, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, renewal: { years: 2 }, officialName: 'Texas Department of Licensing and Regulation (TDLR)', officialUrl: 'https://www.tdlr.texas.gov', retrieved: RETRIEVED },
+  { occupationId: 'nail-technician', stateCode: 'TX', educationHours: 600, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, renewal: { years: 2 }, applicationFee: 50, officialName: 'Texas Department of Licensing and Regulation (TDLR)', officialUrl: 'https://www.tdlr.texas.gov', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'UT', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Utah Division of Professional Licensing — Nail Technician', officialUrl: 'https://dopl.utah.gov', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'VT', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Vermont Board of Barbers and Cosmetologists — Nail Technician', officialUrl: 'https://sos.vermont.gov', retrieved: RETRIEVED },
   { occupationId: 'nail-technician', stateCode: 'VA', educationHours: 150, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, renewal: { years: 2 }, officialName: 'Virginia Board for Barbers and Cosmetology — Nail Technician', officialUrl: 'https://www.dpor.virginia.gov', retrieved: RETRIEVED },

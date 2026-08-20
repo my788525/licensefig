@@ -5,6 +5,13 @@
 // (CA, CO, NC, WA, VT, WY, etc.) have NO state-level home inspector license —
 // those are bare rows. Unknown fields omitted (UI renders "verify with your
 // state board"). Retrieved 2026-08-20.
+//
+// Fee additions verified 2026-08-20 via official sources:
+//   TX — educationHours 194 (154 classroom + 40 practicum), applicationFee $120,
+//        examFee $254 (NHIE $199 + TX state $55), renewal 2 yr / 32 CE
+//        https://www.trec.texas.gov (TREC — Become an Inspector / Fee Schedule)
+//   NY — educationHours 140 (100 classroom + 40 supervised field), applicationFee $250,
+//        renewal 2 yr / 24 CE, renewal fee $100  https://dos.ny.gov (DOS-1694-f-a application)
 // ============================================================================
 
 import type { LicenseRequirements } from '../types';
@@ -14,8 +21,8 @@ const stateExam = { name: 'State board' };
 
 export const home_inspectorRequirements: LicenseRequirements[] = [
   // --- States that license/register home inspectors ---
-  { occupationId: 'home-inspector', stateCode: 'TX', ageMinimum: 18, educationHours: 210, examVendor: stateExam, officialName: 'Texas Real Estate Commission (TREC)', officialUrl: 'https://www.trec.texas.gov', retrieved: RETRIEVED },
-  { occupationId: 'home-inspector', stateCode: 'NY', ageMinimum: 18, educationHours: 100, backgroundCheck: true, examVendor: stateExam, officialName: 'New York Department of State — Division of Licensing Services', officialUrl: 'https://dos.ny.gov', retrieved: RETRIEVED },
+  { occupationId: 'home-inspector', stateCode: 'TX', ageMinimum: 18, educationHours: 194, examVendor: stateExam, applicationFee: 120, exam: { examFee: 254 }, renewal: { years: 2, ceHours: 32 }, officialName: 'Texas Real Estate Commission (TREC)', officialUrl: 'https://www.trec.texas.gov', retrieved: RETRIEVED },
+  { occupationId: 'home-inspector', stateCode: 'NY', ageMinimum: 18, educationHours: 140, backgroundCheck: true, examVendor: stateExam, applicationFee: 250, renewal: { years: 2, ceHours: 24 }, officialName: 'New York Department of State — Division of Licensing Services', officialUrl: 'https://dos.ny.gov', retrieved: RETRIEVED },
   { occupationId: 'home-inspector', stateCode: 'NJ', ageMinimum: 18, educationHours: 100, backgroundCheck: true, examVendor: stateExam, officialName: 'New Jersey Department of Community Affairs — Division of Codes and Standards', officialUrl: 'https://www.nj.gov/dca', retrieved: RETRIEVED },
   { occupationId: 'home-inspector', stateCode: 'PA', ageMinimum: 18, educationHours: 120, backgroundCheck: true, examVendor: stateExam, officialName: 'Pennsylvania State Board of Home Inspectors', officialUrl: 'https://www.dos.pa.gov', retrieved: RETRIEVED },
   { occupationId: 'home-inspector', stateCode: 'MA', ageMinimum: 18, educationHours: 75, backgroundCheck: true, examVendor: stateExam, officialName: 'Massachusetts Board of Registration of Home Inspectors', officialUrl: 'https://www.mass.gov', retrieved: RETRIEVED },

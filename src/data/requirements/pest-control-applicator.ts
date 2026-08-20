@@ -6,6 +6,10 @@
 // termite, fumigation, etc.) and nearly always requires a written state exam.
 // Training-hour totals vary by category and are omitted. Unknown fields
 // omitted (UI renders "verify with your state board"). Retrieved 2026-08-20.
+//
+// Fee additions verified 2026-08-20 via official sources:
+//   FL — examFee $300 per category (structural pest control), license fees:
+//        commercial applicator $250  https://fdacs.ccplatform.net/Business-Services/Pest-Control/Exam-Schedule-and-Information
 // ============================================================================
 
 import type { LicenseRequirements } from '../types';
@@ -23,7 +27,7 @@ export const pest_control_applicatorRequirements: LicenseRequirements[] = [
   { occupationId: 'pest-control-applicator', stateCode: 'CT', ageMinimum: 18, examVendor: stateExam, officialName: 'Connecticut Department of Energy and Environmental Protection — Pesticide Management', officialUrl: 'https://portal.ct.gov/DEEP', retrieved: RETRIEVED },
   { occupationId: 'pest-control-applicator', stateCode: 'DE', ageMinimum: 18, examVendor: stateExam, officialName: 'Delaware Department of Agriculture — Pesticide Compliance', officialUrl: 'https://agriculture.delaware.gov', retrieved: RETRIEVED },
   { occupationId: 'pest-control-applicator', stateCode: 'DC', ageMinimum: 18, examVendor: stateExam, officialName: 'DC Department of Energy and Environment', officialUrl: 'https://doee.dc.gov', retrieved: RETRIEVED },
-  { occupationId: 'pest-control-applicator', stateCode: 'FL', ageMinimum: 18, examVendor: stateExam, officialName: 'Florida Department of Agriculture and Consumer Services (FDACS)', officialUrl: 'https://www.fdacs.gov', retrieved: RETRIEVED },
+  { occupationId: 'pest-control-applicator', stateCode: 'FL', ageMinimum: 18, examVendor: stateExam, exam: { examFee: 300 }, licenseFee: 250, officialName: 'Florida Department of Agriculture and Consumer Services (FDACS)', officialUrl: 'https://www.fdacs.gov', retrieved: RETRIEVED },
   { occupationId: 'pest-control-applicator', stateCode: 'GA', ageMinimum: 18, examVendor: stateExam, officialName: 'Georgia Department of Agriculture — Pesticide Division', officialUrl: 'https://agr.georgia.gov', retrieved: RETRIEVED },
   { occupationId: 'pest-control-applicator', stateCode: 'HI', ageMinimum: 18, examVendor: stateExam, officialName: 'Hawaii Department of Agriculture — Pesticides Branch', officialUrl: 'https://hdoa.hawaii.gov', retrieved: RETRIEVED },
   { occupationId: 'pest-control-applicator', stateCode: 'ID', ageMinimum: 18, examVendor: stateExam, officialName: 'Idaho State Department of Agriculture', officialUrl: 'https://agri.idaho.gov', retrieved: RETRIEVED },

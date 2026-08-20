@@ -10,6 +10,7 @@ const SITE = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://licensefig.com'),
   title: { default: 'LicenseFig — License Requirements & Exam Planning for 15 Licensed Careers', template: '%s | LicenseFig' },
   description:
     'Compare state-by-state license requirements, exam structure, costs, pass rates and retake rules for real estate, CNA, insurance, beauty and trade licenses. Free planning tools for every step of the licensing road.',
@@ -79,6 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <Link href="/reciprocity/" className="block text-slate-300 hover:text-white">Reciprocity</Link>
                   <Link href="/about/" className="block text-slate-300 hover:text-white">About</Link>
                   <Link href="/privacy/" className="block text-slate-300 hover:text-white">Privacy</Link>
+                  <Link href="/terms/" className="block text-slate-300 hover:text-white">Terms</Link>
                 </div>
               </div>
             </div>

@@ -6,6 +6,23 @@ import type { LicenseRequirements } from '../types'
 // Retrieved 2026-08-20. Unknown fields are omitted (UI renders "verify with
 // your state board"). Notes on defaults used only where they are the
 // prevailing, well-established requirement for that state.
+//
+// Field additions verified 2026-08-20 via official sources:
+//   CA — educationHours 12 (AB 943, eff. 2026-01-01: 12-hr Ethics & CA Ins. Code; was 20),
+//        exam 150q/180min/60%  https://www.insurance.ca.gov/0200-industry/0010-producer-online-services/0200-exam-info/examtimesandquestion.cfm
+//   FL — educationHours 200 (2-20 General Lines course), exam 160 scored/180min/70%/$44,
+//        applicationFee $50, licenseFee $5  https://www.pearsonvue.com/content/dam/VUE/vue/en/documents/publications/121000.pdf
+//   GA — educationHours 16 (P&C prelicensing course, 8h each line), applicationFee $120
+//        https://oci.georgia.gov/get-insurance-agent-license
+//   NY — educationHours 90, exam 150q/150min/70%/$33, applicationFee $80 (2-yr term)
+//        https://www.dfs.ny.gov (PSI NY producer licensing)
+//   ND — exam 110q/150min/70%/$67 (PSI bulletin)  https://www.insurance.nd.gov
+//   OK — examFee $38 (PSI bulletin)  https://test-takers.psiexams.com/api/content/bulletin/10769
+//   PA — exam 150q/170min/70%/$55, applicationFee $55 (PSI program instructions)
+//        https://proctor2.psionline.com/media/programs/Instructions/PA%20Insurance%20-%20Migration.pdf
+//   TN — examFee $80 combined P&C (Pearson VUE TN page)  https://home.pearsonvue.com/tn/insurance
+//   TX — vendor Pearson VUE (corrected from PSI), exam 130 scored (145 total)/150min/70%/$49,
+//        applicationFee $50  https://www.pearsonvue.com (Texas Insurance Licensing Candidate Handbook)
 const RETRIEVED = '2026-08-20'
 
 const psi = { name: 'PSI', url: 'https://www.psiexams.com' }
@@ -51,9 +68,9 @@ export const insurance_agent_pcRequirements: LicenseRequirements[] = [
   // California
   {
     occupationId: 'insurance-agent-pc', stateCode: 'CA', retrieved: RETRIEVED,
-    educationHours: 20, ageMinimum: 18, backgroundCheck: true,
+    educationHours: 12, ageMinimum: 18, backgroundCheck: true,
     examVendor: psi,
-    exam: { passingPct: 70 },
+    exam: { nationalQuestions: 150, timeLimitMin: 180, passingPct: 60 },
     renewal: { years: 2, ceHours: 24 },
     officialName: 'California Department of Insurance',
     officialUrl: 'https://www.insurance.ca.gov',
@@ -97,9 +114,10 @@ export const insurance_agent_pcRequirements: LicenseRequirements[] = [
   // Florida
   {
     occupationId: 'insurance-agent-pc', stateCode: 'FL', retrieved: RETRIEVED,
-    ageMinimum: 18, backgroundCheck: true,
+    educationHours: 200, ageMinimum: 18, backgroundCheck: true,
     examVendor: pearson,
-    exam: { passingPct: 70 },
+    exam: { nationalQuestions: 160, timeLimitMin: 180, passingPct: 70, examFee: 44 },
+    applicationFee: 50, licenseFee: 5,
     renewal: { years: 2, ceHours: 24 },
     officialName: 'Florida Department of Financial Services',
     officialUrl: 'https://www.myfloridacfo.com',
@@ -107,8 +125,9 @@ export const insurance_agent_pcRequirements: LicenseRequirements[] = [
   // Georgia
   {
     occupationId: 'insurance-agent-pc', stateCode: 'GA', retrieved: RETRIEVED,
-    ageMinimum: 18, backgroundCheck: true,
+    educationHours: 16, ageMinimum: 18, backgroundCheck: true,
     examVendor: psi,
+    applicationFee: 120,
     renewal: { years: 2, ceHours: 24 },
     officialName: 'Georgia Office of Commissioner of Insurance and Safety Fire',
     officialUrl: 'https://oci.georgia.gov',
@@ -305,9 +324,10 @@ export const insurance_agent_pcRequirements: LicenseRequirements[] = [
   // New York
   {
     occupationId: 'insurance-agent-pc', stateCode: 'NY', retrieved: RETRIEVED,
-    ageMinimum: 18, backgroundCheck: true,
+    educationHours: 90, ageMinimum: 18, backgroundCheck: true,
     examVendor: psi,
-    exam: { passingPct: 70 },
+    exam: { nationalQuestions: 150, timeLimitMin: 150, passingPct: 70, examFee: 33 },
+    applicationFee: 80,
     renewal: { years: 2, ceHours: 15 },
     officialName: 'New York State Department of Financial Services',
     officialUrl: 'https://www.dfs.ny.gov',
@@ -325,7 +345,8 @@ export const insurance_agent_pcRequirements: LicenseRequirements[] = [
   {
     occupationId: 'insurance-agent-pc', stateCode: 'ND', retrieved: RETRIEVED,
     ageMinimum: 18, backgroundCheck: true,
-    examVendor: pearson,
+    examVendor: psi,
+    exam: { nationalQuestions: 110, timeLimitMin: 150, passingPct: 70, examFee: 67 },
     renewal: { years: 2, ceHours: 24 },
     officialName: 'North Dakota Insurance Department',
     officialUrl: 'https://www.nd.gov/ndins',
@@ -344,6 +365,7 @@ export const insurance_agent_pcRequirements: LicenseRequirements[] = [
     occupationId: 'insurance-agent-pc', stateCode: 'OK', retrieved: RETRIEVED,
     ageMinimum: 18, backgroundCheck: true,
     examVendor: psi,
+    exam: { examFee: 38 },
     renewal: { years: 2, ceHours: 24 },
     officialName: 'Oklahoma Insurance Department',
     officialUrl: 'https://www.oid.ok.gov',
@@ -362,6 +384,8 @@ export const insurance_agent_pcRequirements: LicenseRequirements[] = [
     occupationId: 'insurance-agent-pc', stateCode: 'PA', retrieved: RETRIEVED,
     ageMinimum: 18, backgroundCheck: true,
     examVendor: psi,
+    exam: { nationalQuestions: 150, timeLimitMin: 170, passingPct: 70, examFee: 55 },
+    applicationFee: 55,
     renewal: { years: 2, ceHours: 24 },
     officialName: 'Pennsylvania Insurance Department',
     officialUrl: 'https://www.insurance.pa.gov',
@@ -398,6 +422,7 @@ export const insurance_agent_pcRequirements: LicenseRequirements[] = [
     occupationId: 'insurance-agent-pc', stateCode: 'TN', retrieved: RETRIEVED,
     ageMinimum: 18, backgroundCheck: true,
     examVendor: pearson,
+    exam: { examFee: 80 },
     renewal: { years: 2, ceHours: 24 },
     officialName: 'Tennessee Department of Commerce and Insurance',
     officialUrl: 'https://www.tn.gov/commerce',
@@ -406,8 +431,9 @@ export const insurance_agent_pcRequirements: LicenseRequirements[] = [
   {
     occupationId: 'insurance-agent-pc', stateCode: 'TX', retrieved: RETRIEVED,
     ageMinimum: 18, backgroundCheck: true,
-    examVendor: psi,
-    exam: { timeLimitMin: 120, passingPct: 70 },
+    examVendor: pearson,
+    exam: { nationalQuestions: 130, timeLimitMin: 150, passingPct: 70, examFee: 49 },
+    applicationFee: 50,
     renewal: { years: 2, ceHours: 24 },
     officialName: 'Texas Department of Insurance',
     officialUrl: 'https://www.tdi.texas.gov',

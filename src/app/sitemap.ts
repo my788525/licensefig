@@ -7,6 +7,7 @@ const baseUrl = 'https://licensefig.com'
 const TOP_STATES = STATES.map((x) => x.code)
 
 const TOOL_SLUGS = [
+  'license-journey',
   'requirements-lookup', 'study-plan-generator', 'prep-budget', 'retake-interval',
   'pass-rate-index', 'reciprocity-checker', 'exam-cost-compare', 'test-center-finder',
   'license-progress-tracker', 'free-training-finder', 'exam-structure', 'sample-questions',
@@ -26,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/data/`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${baseUrl}/about/`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
     { url: `${baseUrl}/privacy/`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${baseUrl}/terms/`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ]
 
   const occupationUrls: MetadataRoute.Sitemap = OCCUPATIONS.map((o) => ({

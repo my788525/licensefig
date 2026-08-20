@@ -10,6 +10,24 @@ export const metadata: Metadata = {
 
 const TOOLS = [
   {
+    slug: '/tools/requirements-lookup/',
+    emoji: '🔍',
+    name: 'License Requirements Lookup',
+    desc: 'Education, age, exam vendor, questions, passing score, fees and retake rules for your state.',
+  },
+  {
+    slug: '/tools/study-plan-generator/',
+    emoji: '🗓️',
+    name: 'Study Plan Generator',
+    desc: 'Turn an exam date into a week-by-week countdown plan with math drills and spaced repetition.',
+  },
+  {
+    slug: '/tools/license-journey/',
+    emoji: '🧭',
+    name: 'License Journey Planner',
+    desc: 'Full lifecycle roadmap — eligibility to renewal & advancement — printable.',
+  },
+  {
     slug: '/tools/license-progress-tracker/',
     emoji: '🗺️',
     name: 'License Progress Tracker',
@@ -50,6 +68,42 @@ const TOOLS = [
     emoji: '⏳',
     name: 'Exam Countdown',
     desc: 'Days to your exam plus a weekly study task plan.',
+  },
+  {
+    slug: '/tools/prep-budget/',
+    emoji: '💰',
+    name: 'Prep Budget Calculator',
+    desc: 'Estimate the full cost of getting licensed, including retakes and training.',
+  },
+  {
+    slug: '/tools/retake-interval/',
+    emoji: '🔁',
+    name: 'Retake Interval Calculator',
+    desc: 'Earliest retake date by state rule, retake fee and a re-study window.',
+  },
+  {
+    slug: '/tools/pass-rate-index/',
+    emoji: '📊',
+    name: 'Pass Rate Difficulty Index',
+    desc: 'Rank states by published first-attempt pass rate, with a difficulty label.',
+  },
+  {
+    slug: '/tools/reciprocity-checker/',
+    emoji: '🤝',
+    name: 'Reciprocity Checker',
+    desc: 'Whether your license transfers between two states — and what to ask the boards.',
+  },
+  {
+    slug: '/tools/exam-cost-compare/',
+    emoji: '⚖️',
+    name: 'Exam Cost Compare',
+    desc: 'Compare exam and application fees across all 50 states, lowest to highest.',
+  },
+  {
+    slug: '/tools/test-center-finder/',
+    emoji: '📍',
+    name: 'Test Center Finder',
+    desc: 'Find your state and use the official Pearson VUE, PSI or Prometric locators.',
   },
   {
     slug: '/tools/license-renewal/',
@@ -93,9 +147,9 @@ export default function ToolsIndexPage() {
 
       <h1 className="text-3xl font-bold text-slate-900 mb-3">Free licensing tools</h1>
       <p className="text-slate-600 mb-8 leading-relaxed">
-        Twelve free, printable tools that cover every step of the licensing road — from “thinking about it” (career
-        ROI), through studying (sample questions, flashcards, formula sheets), to exam day and renewal. Everything
-        runs in your browser; nothing is stored on our server.
+        {TOOLS.length} free, printable tools that cover every step of the licensing road — from “thinking about it”
+        (career ROI), through studying (sample questions, flashcards, formula sheets), to exam day and renewal.
+        Everything runs in your browser; nothing is stored on our server.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

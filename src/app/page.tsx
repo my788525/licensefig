@@ -38,8 +38,16 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <main>
         {/* Hero — authoritative */}
-        <section className="text-white" style={{ background: 'linear-gradient(135deg,#0b2545 0%,#1b4b8f 55%,#245a9e 100%)' }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <section
+          className="text-white relative"
+          style={{
+            backgroundImage: "url('/images/hero-capitol.webp')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center 30%',
+          }}
+        >
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(105deg, rgba(11,37,69,0.94) 0%, rgba(11,37,69,0.82) 45%, rgba(27,75,143,0.55) 100%)' }} />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-6" style={{ background: 'rgba(201,162,39,0.15)', border: '1px solid rgba(201,162,39,0.5)', color: '#e8d48a' }}>
                 ⭐ Official state-board data · retrieved 2026-08-20
@@ -50,22 +58,25 @@ export default function HomePage() {
               <p className="text-lg md:text-xl text-blue-100 max-w-2xl mb-8 leading-relaxed">
                 Requirements, exam structure, costs, pass rates, retake rules and reciprocity for{' '}
                 <strong className="text-white">{OCCUPATIONS.length} licensed careers</strong> across all 50 states —
-                plus 20 free planning tools for every step from first search to exam day.
+                plus 21 free planning tools for every step from first search to exam day.
               </p>
               <div className="flex flex-wrap gap-3">
-                <a href="/tools/requirements-lookup/" className="btn-cta">
-                  Start: look up your requirements
+                <a href="/tools/license-journey/" className="btn-cta">
+                  🧭 Plan your license journey
                 </a>
-                <a href="/occupations/" className="btn-ghost" style={{ borderColor: 'rgba(255,255,255,0.5)', color: '#fff', background: 'rgba(255,255,255,0.08)' }}>
-                  Browse the 15 careers
+                <a href="/tools/requirements-lookup/" className="btn-ghost" style={{ borderColor: 'rgba(255,255,255,0.5)', color: '#fff', background: 'rgba(255,255,255,0.08)' }}>
+                  Look up requirements
                 </a>
               </div>
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-blue-200">
                 <span>✓ 15 occupations</span>
                 <span>✓ 51 jurisdictions</span>
-                <span>✓ 20 planning tools</span>
+                <span>✓ 21 planning tools</span>
                 <span>✓ Open datasets (CC BY 4.0)</span>
               </div>
+              <p className="mt-6 text-[11px] text-blue-300/70">
+                Photo: U.S. Capitol Building — <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-200">Unsplash</a> (free license)
+              </p>
             </div>
           </div>
         </section>
@@ -102,7 +113,7 @@ export default function HomePage() {
         {/* Tools strip */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="rounded-2xl p-6 md:p-8" style={{ background: 'linear-gradient(135deg,#eef2f9,#f7f3e6)' }}>
-            <h2 className="section-title mb-2">20 planning tools — free, printable</h2>
+            <h2 className="section-title mb-2">21 planning tools — free, printable</h2>
             <p className="text-slate-600 mb-5 text-sm">Every tool runs in your browser, prints cleanly on US Letter, and cites its data source.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
               {[
@@ -121,7 +132,7 @@ export default function HomePage() {
               ))}
             </div>
             <Link href="/tools/" className="inline-block mt-4 text-sm font-semibold text-[#1b4b8f] hover:underline">
-              All 20 tools →
+              All 21 tools →
             </Link>
           </div>
         </section>

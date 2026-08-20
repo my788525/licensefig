@@ -5,6 +5,13 @@
 // Written + practical exam ("State board") in nearly every state. Training
 // hours vary widely (1000–2100). Unknown fields omitted (UI renders "verify
 // with your state board"). Retrieved 2026-08-20.
+//
+// Fee/renewal additions verified 2026-08-20 via official sources:
+//   CA — examFee $75, licenseFee $50, renewal 2 yr  CA Code Regs. Title 16 §998
+//        https://shared-govt.westlaw.com/calregs/Document/IE9BFA7B076C211F0A403A5163E2D806C
+//   NY — app fee $40, license/renewal $40, exam $15 written + $15 practical,
+//        4-yr term (corrected from 3)  https://dos.ny.gov/node/64686
+//   TX — applicationFee $50  https://www.tdlr.texas.gov/barbering-and-cosmetology/
 // ============================================================================
 
 import type { LicenseRequirements } from '../types';
@@ -17,7 +24,7 @@ export const cosmetologistRequirements: LicenseRequirements[] = [
   { occupationId: 'cosmetologist', stateCode: 'AK', educationHours: 1650, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Alaska Board of Barbers and Hairdressers', officialUrl: 'https://www.commerce.alaska.gov/web/cbpl', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'AZ', educationHours: 1000, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Arizona State Board of Cosmetology', officialUrl: 'https://cosmetology.az.gov', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'AR', educationHours: 1500, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Arkansas State Board of Cosmetology', officialUrl: 'https://www.arkcosmetology.org', retrieved: RETRIEVED },
-  { occupationId: 'cosmetologist', stateCode: 'CA', educationHours: 1600, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, renewal: { years: 2 }, officialName: 'California Board of Barbering and Cosmetology', officialUrl: 'https://www.barbercosmo.ca.gov', retrieved: RETRIEVED },
+  { occupationId: 'cosmetologist', stateCode: 'CA', educationHours: 1600, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, renewal: { years: 2 }, exam: { examFee: 75 }, licenseFee: 50, officialName: 'California Board of Barbering and Cosmetology', officialUrl: 'https://www.barbercosmo.ca.gov', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'CO', educationHours: 1200, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Colorado Office of Barber and Cosmetology Licensure', officialUrl: 'https://dpo.colorado.gov/BarberCosmetology', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'CT', educationHours: 1500, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Connecticut Department of Public Health — Barbering and Cosmetology', officialUrl: 'https://portal.ct.gov/DPH', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'DE', educationHours: 1500, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Delaware Board of Cosmetology and Barbering', officialUrl: 'https://dpr.delaware.gov', retrieved: RETRIEVED },
@@ -45,7 +52,7 @@ export const cosmetologistRequirements: LicenseRequirements[] = [
   { occupationId: 'cosmetologist', stateCode: 'NH', educationHours: 1500, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'New Hampshire Board of Barbering and Cosmetology', officialUrl: 'https://www.oplc.nh.gov', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'NJ', educationHours: 1200, backgroundCheck: true, examVendor: stateExam, officialName: 'New Jersey Board of Cosmetology and Hairstyling', officialUrl: 'https://www.njconsumeraffairs.gov', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'NM', educationHours: 1600, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'New Mexico Board of Barbers and Cosmetologists', officialUrl: 'https://www.rld.nm.gov', retrieved: RETRIEVED },
-  { occupationId: 'cosmetologist', stateCode: 'NY', educationHours: 1000, backgroundCheck: true, examVendor: stateExam, renewal: { years: 3 }, officialName: 'New York State Board of Cosmetology', officialUrl: 'https://dos.ny.gov', retrieved: RETRIEVED },
+  { occupationId: 'cosmetologist', stateCode: 'NY', educationHours: 1000, backgroundCheck: true, examVendor: stateExam, renewal: { years: 4 }, applicationFee: 40, licenseFee: 40, exam: { examFee: 15 }, officialName: 'New York State Board of Cosmetology', officialUrl: 'https://dos.ny.gov', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'NC', educationHours: 1500, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'North Carolina State Board of Cosmetic Art Examiners', officialUrl: 'https://www.nccosmeticarts.com', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'ND', educationHours: 1800, backgroundCheck: true, examVendor: stateExam, officialName: 'North Dakota State Board of Cosmetology', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'OH', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Ohio State Cosmetology Board', officialUrl: 'https://cos.ohio.gov', retrieved: RETRIEVED },
@@ -56,7 +63,7 @@ export const cosmetologistRequirements: LicenseRequirements[] = [
   { occupationId: 'cosmetologist', stateCode: 'SC', educationHours: 1500, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'South Carolina Board of Cosmetology', officialUrl: 'https://llr.sc.gov', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'SD', educationHours: 2100, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'South Dakota Cosmetology Commission', officialUrl: 'https://dlr.sd.gov', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'TN', educationHours: 1500, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Tennessee Board of Cosmetology and Barber Examiners', officialUrl: 'https://www.tn.gov/commerce', retrieved: RETRIEVED },
-  { occupationId: 'cosmetologist', stateCode: 'TX', educationHours: 1500, backgroundCheck: true, examVendor: stateExam, renewal: { years: 2 }, officialName: 'Texas Department of Licensing and Regulation (TDLR)', officialUrl: 'https://www.tdlr.texas.gov', retrieved: RETRIEVED },
+  { occupationId: 'cosmetologist', stateCode: 'TX', educationHours: 1500, backgroundCheck: true, examVendor: stateExam, renewal: { years: 2 }, applicationFee: 50, officialName: 'Texas Department of Licensing and Regulation (TDLR)', officialUrl: 'https://www.tdlr.texas.gov', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'UT', ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Utah Division of Professional Licensing — Barber/Cosmetology', officialUrl: 'https://dopl.utah.gov', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'VT', educationHours: 1500, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, officialName: 'Vermont Board of Barbers and Cosmetologists', officialUrl: 'https://sos.vermont.gov', retrieved: RETRIEVED },
   { occupationId: 'cosmetologist', stateCode: 'VA', educationHours: 1500, ageMinimum: 18, backgroundCheck: true, examVendor: stateExam, renewal: { years: 2 }, officialName: 'Virginia Board for Barbers and Cosmetology', officialUrl: 'https://www.dpor.virginia.gov', retrieved: RETRIEVED },
