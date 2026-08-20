@@ -1,0 +1,65 @@
+{
+  "retrieved": "2026-08-20",
+  "schemaVersion": 1,
+  "license": "CC BY 4.0",
+  "note": "Only states that publish official first-attempt pass rates are listed.",
+  "passRates": {
+    "real-estate-salesperson": [
+      {
+        "state": "CA",
+        "passRatePct": 54,
+        "source": "California DRE"
+      },
+      {
+        "state": "FL",
+        "passRatePct": 54,
+        "source": "Florida DBPR"
+      },
+      {
+        "state": "GA",
+        "passRatePct": 60,
+        "source": "Georgia Real Estate Commission"
+      },
+      {
+        "state": "NE",
+        "passRatePct": 53,
+        "source": "Nebraska Real Estate Commission"
+      },
+      {
+        "state": "NY",
+        "passRatePct": 50,
+        "source": "New York Department of State"
+      },
+      {
+        "state": "NC",
+        "passRatePct": 57,
+        "source": "North Carolina Real Estate Commission"
+      },
+      {
+        "state": "TX",
+        "passRatePct": 57,
+        "source": "Texas Real Estate Commission (TREC)"
+      }
+    ],
+    "real-estate-broker": [],
+    "notary-public": [],
+    "cna": [
+      {
+        "state": "FL",
+        "passRatePct": 87.14,
+        "source": "Florida Board of Nursing — CNA exam, Q1 2024 (84.7 written / 81.5 skills)"
+      }
+    ],
+    "insurance-agent-pc": [],
+    "insurance-agent-lh": [],
+    "real-estate-appraiser": [],
+    "cosmetologist": [],
+    "barber": [],
+    "nail-technician": [],
+    "esthetician": [],
+    "massage-therapist": [],
+    "home-inspector": [],
+    "pest-control-applicator": [],
+    "security-guard": []
+  }
+}

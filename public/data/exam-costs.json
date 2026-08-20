@@ -1,0 +1,100 @@
+{
+  "retrieved": "2026-08-20",
+  "schemaVersion": 1,
+  "license": "CC BY 4.0",
+  "examCosts": {
+    "real-estate-salesperson": [
+      {
+        "state": "CA",
+        "examFee": 60,
+        "applicationFee": null
+      },
+      {
+        "state": "FL",
+        "examFee": 57,
+        "applicationFee": null
+      },
+      {
+        "state": "NE",
+        "examFee": 150,
+        "applicationFee": null
+      },
+      {
+        "state": "NV",
+        "examFee": 100,
+        "applicationFee": 140
+      },
+      {
+        "state": "NY",
+        "examFee": 15,
+        "applicationFee": null
+      },
+      {
+        "state": "NC",
+        "examFee": 63,
+        "applicationFee": null
+      },
+      {
+        "state": "TX",
+        "examFee": 86,
+        "applicationFee": null
+      }
+    ],
+    "real-estate-broker": [
+      {
+        "state": "CA",
+        "examFee": 60,
+        "applicationFee": null
+      },
+      {
+        "state": "FL",
+        "examFee": 57,
+        "applicationFee": null
+      },
+      {
+        "state": "NY",
+        "examFee": 15,
+        "applicationFee": null
+      },
+      {
+        "state": "TX",
+        "examFee": 86,
+        "applicationFee": null
+      }
+    ],
+    "notary-public": [
+      {
+        "state": "CA",
+        "examFee": null,
+        "applicationFee": 20
+      },
+      {
+        "state": "MA",
+        "examFee": null,
+        "applicationFee": 60
+      },
+      {
+        "state": "NY",
+        "examFee": null,
+        "applicationFee": 60
+      },
+      {
+        "state": "TX",
+        "examFee": null,
+        "applicationFee": 21
+      }
+    ],
+    "cna": [],
+    "insurance-agent-pc": [],
+    "insurance-agent-lh": [],
+    "real-estate-appraiser": [],
+    "cosmetologist": [],
+    "barber": [],
+    "nail-technician": [],
+    "esthetician": [],
+    "massage-therapist": [],
+    "home-inspector": [],
+    "pest-control-applicator": [],
+    "security-guard": []
+  }
+}

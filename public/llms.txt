@@ -1,0 +1,32 @@
+# LicenseFig — License Requirements & Exam Planning for 15 Licensed Careers
+
+LicenseFig is a free planning resource for the licensing road: state-by-state license
+requirements, exam structure, costs, pass rates, retake rules and reciprocity for licensed
+careers including Real Estate, CNA, Notary, Insurance, Beauty and Trades occupations.
+All calculators run in the browser; no accounts, no data collection.
+
+## Careers (occupation × state matrices)
+- https://licensefig.com/occupations/ — career index
+- https://licensefig.com/occupations/real-estate-salesperson/ — Real Estate Salesperson (50 states)
+- https://licensefig.com/occupations/cna/ — Certified Nursing Assistant (50 states)
+- https://licensefig.com/occupations/notary-public/ — Notary Public (50 states)
+- https://licensefig.com/occupations/security-guard/ — Security Guard (50 states)
+
+## Key tools
+- https://licensefig.com/tools/requirements-lookup/ — State requirements lookup (career + state)
+- https://licensefig.com/tools/study-plan-generator/ — Study plan generator (exam countdown)
+- https://licensefig.com/tools/retake-interval/ — Retake interval calculator (by state rule)
+- https://licensefig.com/tools/pass-rate-index/ — Pass rate difficulty index by state
+- https://licensefig.com/tools/reciprocity-checker/ — License reciprocity checker
+- https://licensefig.com/tools/exam-cost-compare/ — Exam cost compare across 50 states
+- https://licensefig.com/tools/sample-questions/ — Original sample questions (not actual exam items)
+
+## Data sources
+License requirements data is compiled from state licensing boards, PSI, Pearson VUE, Credentia,
+CMS (NATCEP), FSMTB and state Secretary of State offices, with per-page retrieval dates
+(2026-08-20). Requirements change — verify with your state board. Open datasets:
+https://licensefig.com/data/ (CC BY 4.0).
+
+## Policy
+LicenseFig is not a course or question-bank platform; we do not sell exam content. Sample
+questions are original and not actual exam questions. Content is informational, not legal advice.

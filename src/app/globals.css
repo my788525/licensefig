@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Print: hide nav/controls, show only the report area */
+@media print {
+  header, footer, .no-print { display: none !important; }
+  .report-area { box-shadow: none !important; border: none !important; }
+}

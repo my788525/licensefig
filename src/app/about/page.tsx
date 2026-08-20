@@ -1,0 +1,28 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'About LicenseFig — free license planning tools and state-by-state data for licensed careers.',
+  alternates: { canonical: '/about/' },
+}
+
+export default function AboutPage() {
+  return (
+    <main className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+      <h1 className="text-3xl font-bold mb-4">About LicenseFig</h1>
+      <p className="text-slate-600 mb-3">
+        LicenseFig is a free planning resource for the licensing road: state-by-state license
+        requirements, exam structure, costs, pass rates, retake rules and reciprocity for 15 licensed careers.
+      </p>
+      <p className="text-slate-600 mb-3">
+        We are deliberately <strong>not</strong> a course or question-bank platform. Planning tools stay
+        free; where useful we point to reputable exam prep providers. Sample questions on this site are
+        original and not actual exam questions.
+      </p>
+      <p className="text-slate-600">
+        Data is compiled from state boards, PSI, Pearson VUE and CMS, with retrieval dates on every page.
+        Requirements change — always verify with your state board.
+      </p>
+    </main>
+  )
+}
