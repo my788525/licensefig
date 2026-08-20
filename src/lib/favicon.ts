@@ -1,0 +1,9 @@
+// Favicon — official-seal shield mark (navy + gold), optimized for 16/32px.
+export const FAVICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1B4B8F"/><stop offset="1" stop-color="#0B2545"/>
+  </linearGradient></defs>
+  <path d="M32 3 55 11v20c0 14.5-9.9 25.1-23 30C18.9 56.1 9 45.5 9 31V11L32 3Z" fill="url(#s)" stroke="#C9A227" stroke-width="3"/>
+  <rect x="21" y="17" width="22" height="30" rx="2.5" fill="#fff"/>
+  <path d="m27.5 22.5 3.4 3.4 6.6-7" stroke="#C9A227" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>`

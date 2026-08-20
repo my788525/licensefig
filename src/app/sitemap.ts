@@ -1,7 +1,9 @@
 import type { MetadataRoute } from 'next'
-import { OCCUPATIONS } from '@/data/types'
+import { OCCUPATIONS, STATES } from '@/data/types'
 
 const baseUrl = 'https://licensefig.com'
+
+const TOP_STATES = ['CA', 'TX', 'FL', 'NY', 'PA', 'IL', 'OH', 'GA', 'NC', 'MI', 'NJ', 'VA', 'WA', 'AZ', 'MA', 'TN', 'IN', 'MO', 'MD', 'WI']
 
 const TOOL_SLUGS = [
   'requirements-lookup', 'study-plan-generator', 'prep-budget', 'retake-interval',
@@ -39,5 +41,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticUrls, ...occupationUrls, ...toolUrls]
+  const guideUrls: MetadataRoute.Sitemap = []
+  for (const occ of OCCUPATIONS) {
+    for (const sc of TOP_STATES) {
+      guideUrls.push({
+        url: `${baseUrl}/licensing-guides/${occ.slug}/${sc}/`,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.75,
+      })
+    }
+  }
+
+  return [...staticUrls, ...occupationUrls, ...toolUrls, ...guideUrls]
 }

@@ -2,8 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Print: hide nav/controls, show only the report area */
+/* ============================================================
+   LicenseFig design tokens — professional / authoritative
+   Navy (#0B2545 → #1B4B8F) + Government Gold (#C9A227)
+   Serif display (Georgia) for authority, sans body for readability.
+   ============================================================ */
+
+:root {
+  --navy-900: #0b2545;
+  --navy-800: #123b6d;
+  --navy-700: #1b4b8f;
+  --navy-100: #e8eef7;
+  --gold-600: #c9a227;
+  --gold-100: #f7efd8;
+  --paper: #f8f9fb;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1a2233;
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
+}
+
+/* Section heading treatment */
+.section-title {
+  @apply font-display text-2xl md:text-3xl font-bold text-slate-900;
+  border-left: 4px solid var(--gold-600);
+  padding-left: 0.75rem;
+}
+
+/* Authority card */
+.card-rule {
+  @apply bg-white rounded-xl border border-slate-200;
+  box-shadow: 0 1px 2px rgba(11, 37, 69, 0.04);
+}
+
+/* Data table styling (state matrices) */
+.data-table th {
+  background: var(--navy-900);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.data-table td {
+  border-bottom: 1px solid #eef1f5;
+}
+
+/* Primary CTA — navy with gold accent underline */
+.btn-cta {
+  @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-white font-semibold transition;
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
+  border-bottom: 3px solid var(--gold-600);
+}
+.btn-cta:hover {
+  filter: brightness(1.08);
+}
+.btn-ghost {
+  @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold transition;
+  border: 1px solid var(--navy-800);
+  color: var(--navy-800);
+  background: #fff;
+}
+.btn-ghost:hover {
+  background: var(--navy-100);
+}
+
+/* Official-source badge */
+.source-badge {
+  @apply inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full;
+  background: var(--gold-100);
+  color: #7a5c0a;
+  border: 1px solid #e6d18a;
+}
+
+/* Print: hide chrome, keep reports */
 @media print {
   header, footer, .no-print { display: none !important; }
+  body { background: #fff; }
   .report-area { box-shadow: none !important; border: none !important; }
 }

@@ -37,54 +37,73 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <main>
-        {/* Hero */}
-        <section className="bg-gradient-to-br from-indigo-700 via-indigo-600 to-violet-600 text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center">
-            <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
-              The license road, <span className="text-amber-300">state by state</span>
-            </h1>
-            <p className="text-lg md:text-xl text-indigo-100 max-w-3xl mx-auto mb-8">
-              Requirements, exam structure, costs, pass rates, retake rules and reciprocity for{' '}
-              <strong>{OCCUPATIONS.length} licensed careers</strong> across all 50 states — plus free tools
-              to plan every step from “thinking about it” to “first day on the job”.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              <Link href="/tools/" className="px-6 py-3 rounded-xl bg-white text-indigo-700 font-semibold hover:bg-indigo-50">
-                Browse the tools
-              </Link>
-              <Link href="/occupations/" className="px-6 py-3 rounded-xl bg-indigo-500/40 border border-indigo-300/50 text-white font-semibold hover:bg-indigo-500/60">
-                Pick a career
-              </Link>
+        {/* Hero — authoritative */}
+        <section className="text-white" style={{ background: 'linear-gradient(135deg,#0b2545 0%,#1b4b8f 55%,#245a9e 100%)' }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-6" style={{ background: 'rgba(201,162,39,0.15)', border: '1px solid rgba(201,162,39,0.5)', color: '#e8d48a' }}>
+                ⭐ Official state-board data · retrieved 2026-08-20
+              </div>
+              <h1 className="font-display text-3xl md:text-5xl font-bold leading-tight mb-5">
+                The license road, <span style={{ color: '#e8d48a' }}>state by state</span>
+              </h1>
+              <p className="text-lg md:text-xl text-blue-100 max-w-2xl mb-8 leading-relaxed">
+                Requirements, exam structure, costs, pass rates, retake rules and reciprocity for{' '}
+                <strong className="text-white">{OCCUPATIONS.length} licensed careers</strong> across all 50 states —
+                plus 20 free planning tools for every step from first search to exam day.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href="/tools/requirements-lookup/" className="btn-cta">
+                  Start: look up your requirements
+                </a>
+                <a href="/occupations/" className="btn-ghost" style={{ borderColor: 'rgba(255,255,255,0.5)', color: '#fff', background: 'rgba(255,255,255,0.08)' }}>
+                  Browse the 15 careers
+                </a>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-blue-200">
+                <span>✓ 15 occupations</span>
+                <span>✓ 51 jurisdictions</span>
+                <span>✓ 20 planning tools</span>
+                <span>✓ Open datasets (CC BY 4.0)</span>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Occupations grid */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <h2 className="text-2xl font-bold mb-2">15 licensed careers, 50 states</h2>
-          <p className="text-slate-500 mb-6">
-            Every career gets a state-by-state requirement matrix, exam structure, cost &amp; pass-rate data,
-            retake rules and reciprocity notes — plus the shared planning tools below.
-          </p>
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          <div className="flex items-end justify-between mb-6">
+            <div>
+              <h2 className="section-title">15 licensed careers, 51 jurisdictions</h2>
+              <p className="text-slate-500 mt-2 max-w-2xl">
+                Every career gets a state-by-state requirement matrix, exam structure, cost &amp; pass-rate
+                data, retake rules and reciprocity notes — plus the shared planning tools below.
+              </p>
+            </div>
+            <Link href="/occupations/" className="hidden md:inline-block text-sm font-semibold text-[#1b4b8f] hover:underline">
+              View all →
+            </Link>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
             {OCCUPATIONS.map((o) => (
               <Link
                 key={o.id}
                 href={`/occupations/${o.slug}/`}
-                className="rounded-xl border border-slate-200 p-4 hover:border-indigo-300 hover:shadow-sm transition"
+                className="card-rule p-4 hover:border-[#1b4b8f] hover:shadow-md transition"
               >
                 <div className="text-2xl mb-1">{o.emoji}</div>
                 <div className="font-semibold text-sm leading-snug">{o.shortName}</div>
-                <div className="text-xs text-slate-500 mt-1">{o.category}</div>
+                <div className="text-xs text-slate-500 mt-1 uppercase tracking-wide">{o.category}</div>
               </Link>
             ))}
           </div>
         </section>
 
         {/* Tools strip */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="rounded-2xl bg-slate-50 border border-slate-200 p-6 md:p-8">
-            <h2 className="text-xl font-bold mb-4">Planning tools (free, printable)</h2>
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+          <div className="rounded-2xl p-6 md:p-8" style={{ background: 'linear-gradient(135deg,#eef2f9,#f7f3e6)' }}>
+            <h2 className="section-title mb-2">20 planning tools — free, printable</h2>
+            <p className="text-slate-600 mb-5 text-sm">Every tool runs in your browser, prints cleanly on US Letter, and cites its data source.</p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
               {[
                 ['/tools/requirements-lookup/', 'State Requirements Lookup'],
@@ -96,11 +115,14 @@ export default function HomePage() {
                 ['/tools/exam-cost-compare/', 'Exam Cost Compare'],
                 ['/tools/test-center-finder/', 'Test Center Finder'],
               ].map(([href, label]) => (
-                <Link key={href} href={href} className="rounded-lg bg-white border border-slate-200 px-3 py-2.5 hover:border-indigo-300 hover:text-indigo-700">
+                <Link key={href} href={href} className="rounded-lg bg-white border border-slate-200 px-3 py-2.5 hover:border-[#1b4b8f] hover:text-[#1b4b8f] shadow-sm">
                   {label}
                 </Link>
               ))}
             </div>
+            <Link href="/tools/" className="inline-block mt-4 text-sm font-semibold text-[#1b4b8f] hover:underline">
+              All 20 tools →
+            </Link>
           </div>
         </section>
       </main>
