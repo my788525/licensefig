@@ -61,7 +61,7 @@ export default function TermsPage() {
       <h2 className="text-xl font-bold mt-8 mb-2">Changes &amp; contact</h2>
       <p className="text-slate-600 mb-3">
         We may update these terms as the site evolves; the latest version is always on this page. Questions?
-        Email <a href="mailto:hello@licensefig.com" className="text-[#1b4b8f] underline">hello@licensefig.com</a>.
+        Email <a href="mailto:team@licensefig.com" className="text-[#1b4b8f] underline">team@licensefig.com</a>.
       </p>
     </main>
   )

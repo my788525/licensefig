@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import AuthorByline from '@/components/AuthorByline'
 
 // ============================================================================
 // L3 — 2026 exam changes. Content verified online 2026-08-20 against state
@@ -71,6 +72,7 @@ export default function ExamChanges2026Page() {
           NAR settlement rules are now tested in all 50 states. For CNAs, Credentia remains the largest testing vendor,
           while Headmaster runs the Texas exam.
         </p>
+        <AuthorByline />
         <p className="text-sm text-slate-500 mb-10">
           Every item below was checked against official commission, vendor or registry sources on 2026-08-20. Items we
           could not verify are not listed.

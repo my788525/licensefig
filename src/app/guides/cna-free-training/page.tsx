@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import AuthorByline from '@/components/AuthorByline'
 
 // ============================================================================
 // CNA employer-funded / free training guide — a static long-tail guide page.
@@ -102,6 +103,7 @@ export default function CnaFreeTrainingGuidePage() {
           development programs that fund tuition through American Job Centers and Individual Training Accounts; and
           Medicaid or community-college subsidies aimed at long-term-care staffing shortages.
         </p>
+        <AuthorByline />
         <p className="text-sm text-slate-500 mb-8">
           This page describes the general models only — it does not list specific employers or state-program details,
           because those change constantly. The official channels at the end of this guide show you exactly how to find

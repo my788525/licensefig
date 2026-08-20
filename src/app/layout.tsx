@@ -93,6 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <Link href="/reciprocity/" className="block text-slate-300 hover:text-white">Reciprocity</Link>
                   <Link href="/methodology/" className="block text-slate-300 hover:text-white">Methodology</Link>
                   <Link href="/about/" className="block text-slate-300 hover:text-white">About</Link>
+                  <Link href="/contact/" className="block text-slate-300 hover:text-white">Contact</Link>
                   <Link href="/privacy/" className="block text-slate-300 hover:text-white">Privacy</Link>
                   <Link href="/terms/" className="block text-slate-300 hover:text-white">Terms</Link>
                 </div>

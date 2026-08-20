@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import AuthorByline from '@/components/AuthorByline'
 import { OCCUPATIONS, STATES, getOccupation } from '@/data/types'
 import { getRequirements } from '@/data/requirements'
 
@@ -89,6 +90,8 @@ export default async function OccupationPage({ params }: Props) {
             </p>
           </div>
         </div>
+
+        <AuthorByline />
 
         {/* Quick tools */}
         <div className="flex flex-wrap gap-2 mb-8">

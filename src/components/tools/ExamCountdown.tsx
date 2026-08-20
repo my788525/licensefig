@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import PrintButton from './PrintButton'
 
-const SUBSCRIBE_EMAIL = 'hello@licensefig.com'
+const SUBSCRIBE_EMAIL = 'team@licensefig.com'
 
 // Weekly task buckets based on how many weeks remain before the exam.
 interface Bucket {

@@ -12,8 +12,16 @@ export default function PrivacyPage() {
       <h1 className="text-3xl font-bold mb-4">Privacy</h1>
       <p className="text-slate-600 mb-3">
         LicenseFig is a static website. All calculators run in your browser; we operate no accounts and
-        collect no personal data. Optional email subscriptions open your own mail client with a pre-filled
+        collect no personal data by default. Optional email links open your own mail client with a pre-filled
         message — nothing is stored on our servers.
+      </p>
+      <p className="text-slate-600 mb-3">
+        <strong>Contact form:</strong> if you send a message via our{' '}
+        <a href="/contact/" className="text-[#1b4b8f] underline">contact form</a>, the name, email and message
+        you submit are transmitted to and stored by Web3Forms (web3forms.com) solely to receive and respond to
+        your inquiry. We do not use this information for marketing, and we never sell, trade, rent or transfer
+        it to third parties. You may request deletion of your submission at any time by emailing{' '}
+        <a href="mailto:team@licensefig.com" className="text-[#1b4b8f] underline">team@licensefig.com</a>.
       </p>
       <p className="text-slate-600 mb-3">
         We use standard analytics (e.g. Cloudflare Web Analytics) that do not track individuals. We never
@@ -27,7 +35,8 @@ export default function PrivacyPage() {
       <h2 className="text-xl font-bold mt-8 mb-2">Contact</h2>
       <p className="text-slate-600 mb-3">
         Questions about this policy, the site or its data? Email{' '}
-        <a href="mailto:hello@licensefig.com" className="text-[#1b4b8f] underline">hello@licensefig.com</a>.
+        <a href="mailto:team@licensefig.com" className="text-[#1b4b8f] underline">team@licensefig.com</a>{' '}
+        or use our <a href="/contact/" className="text-[#1b4b8f] underline">contact form</a>.
       </p>
 
       <h2 className="text-xl font-bold mt-8 mb-2">Third-party disclosure</h2>
@@ -51,7 +60,7 @@ export default function PrivacyPage() {
         All content on LicenseFig — text, tables, tools and sample questions — is original and protected by
         copyright. We do not host user-generated content, so DMCA takedowns are uncommon. If you believe any
         material on this site infringes your copyright, email{' '}
-        <a href="mailto:hello@licensefig.com" className="text-[#1b4b8f] underline">hello@licensefig.com</a>{' '}
+        <a href="mailto:team@licensefig.com" className="text-[#1b4b8f] underline">team@licensefig.com</a>{' '}
         with the page URL and a description, and we will review it promptly.
       </p>
     </main>

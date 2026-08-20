@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import AuthorByline from '@/components/AuthorByline'
 import { OCCUPATIONS, STATES } from '@/data/types'
 import { getRequirements } from '@/data/requirements'
 import type { LicenseRequirements } from '@/data/types'
@@ -225,6 +226,7 @@ export default async function GuidePage({ params }: Props) {
           {occ.name} License Guide {YEAR}
         </h1>
         <p className="text-lg text-slate-700 leading-relaxed mb-3">{directAnswer}</p>
+        <AuthorByline />
         <p className="text-sm text-slate-500 mb-8">{occ.description}</p>
 
         {/* National overview table */}
