@@ -63,7 +63,20 @@ for (const occ of OCCUPATIONS) {
     officialUrl: r.officialUrl ?? null,
   }))
 }
-writeFileSync(`${OUT}/requirements.json`, JSON.stringify({ retrieved: RETRIEVED, schemaVersion: 1, license: 'CC BY 4.0', occupations: requirements }, null, 2))
+// ---- data files with fingerprint + refresh commitment ----
+import { createHash } from 'node:crypto'
+
+const REFRESH_COMMITMENT = {
+  cadence: 'annual',
+  nextRefresh: 'January 2027',
+  versioning: 'SemVer-style YYYY.N — see data-version.json and CHANGELOG.md',
+  fingerprint: 'Every dataset carries a content-derived fingerprint (sha256 of the canonical data). Republished or derived copies can be traced back to this site.',
+}
+
+const fingerprintOf = (obj) => createHash('sha256').update(JSON.stringify(obj)).digest('hex')
+
+const requirementsBody = { retrieved: RETRIEVED, schemaVersion: 1, license: 'CC BY 4.0', refresh: REFRESH_COMMITMENT, fingerprint: fingerprintOf(requirements), occupations: requirements }
+writeFileSync(`${OUT}/requirements.json`, JSON.stringify(requirementsBody, null, 2))
 
 // ---- pass-rates.json ----
 const passRates = {}
@@ -73,7 +86,7 @@ for (const occ of OCCUPATIONS) {
     .filter((r) => r.passRatePct != null)
     .map((r) => ({ state: r.stateCode, passRatePct: r.passRatePct, source: r.passRateSource ?? 'state commission' }))
 }
-writeFileSync(`${OUT}/pass-rates.json`, JSON.stringify({ retrieved: RETRIEVED, schemaVersion: 1, license: 'CC BY 4.0', note: 'Only states that publish official first-attempt pass rates are listed.', passRates }, null, 2))
+writeFileSync(`${OUT}/pass-rates.json`, JSON.stringify({ retrieved: RETRIEVED, schemaVersion: 1, license: 'CC BY 4.0', refresh: REFRESH_COMMITMENT, fingerprint: fingerprintOf(passRates), note: 'Only states that publish official first-attempt pass rates are listed.', passRates }, null, 2))
 
 // ---- exam-costs.json ----
 const examCosts = {}
@@ -83,7 +96,7 @@ for (const occ of OCCUPATIONS) {
     .filter((r) => r.exam?.examFee != null || r.applicationFee != null)
     .map((r) => ({ state: r.stateCode, examFee: r.exam?.examFee ?? null, applicationFee: r.applicationFee ?? null }))
 }
-writeFileSync(`${OUT}/exam-costs.json`, JSON.stringify({ retrieved: RETRIEVED, schemaVersion: 1, license: 'CC BY 4.0', examCosts }, null, 2))
+writeFileSync(`${OUT}/exam-costs.json`, JSON.stringify({ retrieved: RETRIEVED, schemaVersion: 1, license: 'CC BY 4.0', refresh: REFRESH_COMMITMENT, fingerprint: fingerprintOf(examCosts), examCosts }, null, 2))
 
 // ---- data-version.json ----
 writeFileSync(
@@ -92,7 +105,9 @@ writeFileSync(
     {
       schemaVersion: 1,
       updated: RETRIEVED,
+      version: '2026.1',
       license: 'CC BY 4.0',
+      refresh: REFRESH_COMMITMENT,
       howToCite: 'licensefig.com open dataset (retrieved 2026-08-20)',
       datasets: [
         { file: 'requirements.json', description: 'License requirements matrix: 15 occupations x 50 states + DC' },
@@ -108,7 +123,13 @@ writeFileSync(
 // ---- CHANGELOG.md ----
 const changelog = `# LicenseFig — Open Dataset Changelog
 
-Machine-readable datasets, freely licensed (CC BY 4.0) for citation by AI assistants, apps and researchers. Always fetch the latest version.
+Machine-readable datasets, freely licensed (CC BY 4.0) for citation by AI assistants, apps and researchers.
+
+## Data commitment
+- **Refresh cadence:** annual (next refresh January 2027) + immediate updates on major regulatory changes.
+- **Versioning:** every release is versioned (2026.1 → 2027.1) in data-version.json; all changes are logged here.
+- **Fingerprint:** every dataset carries a content-derived sha256 fingerprint so any republished or derived copy can be traced back to this canonical source.
+- **Canonical source:** always fetch from https://licensefig.com/data/ — third-party mirrors may be stale or modified.
 
 | Dataset | Version | Updated | Notes |
 |---|---|---|---|

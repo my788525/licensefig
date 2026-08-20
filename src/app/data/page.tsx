@@ -95,6 +95,32 @@ export default function DataPage() {
           </div>
         ))}
       </div>
+
+      {/* Data commitment */}
+      <div className="rounded-2xl p-6 mt-8" style={{ background: 'linear-gradient(135deg,#eef2f9,#f7f3e6)' }}>
+        <h2 className="font-display text-lg font-bold mb-3">Data commitment</h2>
+        <ul className="space-y-2 text-sm text-slate-700">
+          <li>
+            <strong>Annual refresh.</strong> Datasets are refreshed every January (next refresh: January 2027) and
+            updated immediately when a major regulatory change is published. Always fetch the latest version.
+          </li>
+          <li>
+            <strong>Versioned releases.</strong> Every release is numbered (2026.1 → 2027.1) in{' '}
+            <Link href="/data/data-version.json" className="text-[#1b4b8f] hover:underline">data-version.json</Link>,
+            with all changes logged in{' '}
+            <Link href="/data/CHANGELOG.md" className="text-[#1b4b8f] hover:underline">CHANGELOG.md</Link>.
+          </li>
+          <li>
+            <strong>Traceable fingerprint.</strong> Each dataset carries a content-derived sha256 fingerprint so any
+            republished or derived copy can be traced back to this canonical source.
+          </li>
+          <li>
+            <strong>Canonical source.</strong> Always cite the files on licensefig.com — third-party mirrors may be
+            stale or modified. Suggested citation: &ldquo;LicenseFig open dataset, retrieved 2026-08-20 (CC BY 4.0)&rdquo;.
+          </li>
+        </ul>
+      </div>
+
       <p className="text-xs text-slate-400 mt-6">
         Datasets are generated from the same source data as the state pages. Retrieved 2026-08-20.
       </p>

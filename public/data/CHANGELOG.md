@@ -1,6 +1,12 @@
 # LicenseFig — Open Dataset Changelog
 
-Machine-readable datasets, freely licensed (CC BY 4.0) for citation by AI assistants, apps and researchers. Always fetch the latest version.
+Machine-readable datasets, freely licensed (CC BY 4.0) for citation by AI assistants, apps and researchers.
+
+## Data commitment
+- **Refresh cadence:** annual (next refresh January 2027) + immediate updates on major regulatory changes.
+- **Versioning:** every release is versioned (2026.1 → 2027.1) in data-version.json; all changes are logged here.
+- **Fingerprint:** every dataset carries a content-derived sha256 fingerprint so any republished or derived copy can be traced back to this canonical source.
+- **Canonical source:** always fetch from https://licensefig.com/data/ — third-party mirrors may be stale or modified.
 
 | Dataset | Version | Updated | Notes |
 |---|---|---|---|

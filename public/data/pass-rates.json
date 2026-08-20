@@ -2,6 +2,13 @@
   "retrieved": "2026-08-20",
   "schemaVersion": 1,
   "license": "CC BY 4.0",
+  "refresh": {
+    "cadence": "annual",
+    "nextRefresh": "January 2027",
+    "versioning": "SemVer-style YYYY.N — see data-version.json and CHANGELOG.md",
+    "fingerprint": "Every dataset carries a content-derived fingerprint (sha256 of the canonical data). Republished or derived copies can be traced back to this site."
+  },
+  "fingerprint": "319e6f74f732820e31cad88372aa0dfdbdf58bdcd09d748755b9ab0e80d9f014",
   "note": "Only states that publish official first-attempt pass rates are listed.",
   "passRates": {
     "real-estate-salesperson": [

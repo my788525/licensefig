@@ -24,11 +24,13 @@ Dataset version: 2026.1 (retrieved 2026-08-20). See methodology: https://license
 
 ## Open datasets
 Machine-readable datasets, freely licensed for citation by AI assistants, apps and researchers.
-Always fetch the latest version — data is refreshed annually (current version 2026.1, 2026-08-20).
+Always fetch the latest version — data is refreshed annually (current version 2026.1, 2026-08-20;
+next refresh January 2027). Each dataset carries a content-derived sha256 fingerprint so republished
+or derived copies can be traced back to this canonical source.
 - https://licensefig.com/data/requirements.json — License requirements matrix (15 occupations × 50 states + DC), version 2026.1, CC BY 4.0
 - https://licensefig.com/data/pass-rates.json — Published first-attempt pass rates by state, version 2026.1, CC BY 4.0
 - https://licensefig.com/data/exam-costs.json — Exam and application fees by occupation and state, version 2026.1, CC BY 4.0
-- https://licensefig.com/data/data-version.json — Machine-readable dataset manifest (version, license, how-to-cite)
+- https://licensefig.com/data/data-version.json — Machine-readable dataset manifest (version, license, refresh commitment, how-to-cite)
 - https://licensefig.com/data/CHANGELOG.md — Dataset version changelog (always cite the latest version)
 
 ## How to cite

@@ -2,6 +2,13 @@
   "retrieved": "2026-08-20",
   "schemaVersion": 1,
   "license": "CC BY 4.0",
+  "refresh": {
+    "cadence": "annual",
+    "nextRefresh": "January 2027",
+    "versioning": "SemVer-style YYYY.N — see data-version.json and CHANGELOG.md",
+    "fingerprint": "Every dataset carries a content-derived fingerprint (sha256 of the canonical data). Republished or derived copies can be traced back to this site."
+  },
+  "fingerprint": "365d802720d8ddf2a217d16f8602bf280c8c400ad2574ed880475036f501b704",
   "examCosts": {
     "real-estate-salesperson": [
       {
@@ -85,16 +92,190 @@
       }
     ],
     "cna": [],
-    "insurance-agent-pc": [],
-    "insurance-agent-lh": [],
+    "insurance-agent-pc": [
+      {
+        "state": "FL",
+        "examFee": 44,
+        "applicationFee": 50
+      },
+      {
+        "state": "GA",
+        "examFee": null,
+        "applicationFee": 120
+      },
+      {
+        "state": "NY",
+        "examFee": 33,
+        "applicationFee": 80
+      },
+      {
+        "state": "ND",
+        "examFee": 67,
+        "applicationFee": null
+      },
+      {
+        "state": "OK",
+        "examFee": 38,
+        "applicationFee": null
+      },
+      {
+        "state": "PA",
+        "examFee": 55,
+        "applicationFee": 55
+      },
+      {
+        "state": "TN",
+        "examFee": 80,
+        "applicationFee": null
+      },
+      {
+        "state": "TX",
+        "examFee": 49,
+        "applicationFee": 50
+      }
+    ],
+    "insurance-agent-lh": [
+      {
+        "state": "FL",
+        "examFee": 44,
+        "applicationFee": 50
+      },
+      {
+        "state": "GA",
+        "examFee": null,
+        "applicationFee": 120
+      },
+      {
+        "state": "NY",
+        "examFee": 33,
+        "applicationFee": 80
+      },
+      {
+        "state": "ND",
+        "examFee": 67,
+        "applicationFee": null
+      },
+      {
+        "state": "OK",
+        "examFee": 38,
+        "applicationFee": null
+      },
+      {
+        "state": "PA",
+        "examFee": 55,
+        "applicationFee": 55
+      },
+      {
+        "state": "TN",
+        "examFee": 80,
+        "applicationFee": null
+      },
+      {
+        "state": "TX",
+        "examFee": 49,
+        "applicationFee": 50
+      }
+    ],
     "real-estate-appraiser": [],
-    "cosmetologist": [],
-    "barber": [],
-    "nail-technician": [],
-    "esthetician": [],
+    "cosmetologist": [
+      {
+        "state": "CA",
+        "examFee": 75,
+        "applicationFee": null
+      },
+      {
+        "state": "NY",
+        "examFee": 15,
+        "applicationFee": 40
+      },
+      {
+        "state": "TX",
+        "examFee": null,
+        "applicationFee": 50
+      }
+    ],
+    "barber": [
+      {
+        "state": "CA",
+        "examFee": 75,
+        "applicationFee": null
+      },
+      {
+        "state": "NY",
+        "examFee": 15,
+        "applicationFee": 40
+      },
+      {
+        "state": "TX",
+        "examFee": null,
+        "applicationFee": 50
+      }
+    ],
+    "nail-technician": [
+      {
+        "state": "CA",
+        "examFee": 75,
+        "applicationFee": null
+      },
+      {
+        "state": "NY",
+        "examFee": 15,
+        "applicationFee": 40
+      },
+      {
+        "state": "TX",
+        "examFee": null,
+        "applicationFee": 50
+      }
+    ],
+    "esthetician": [
+      {
+        "state": "CA",
+        "examFee": 75,
+        "applicationFee": null
+      },
+      {
+        "state": "NY",
+        "examFee": 15,
+        "applicationFee": 40
+      },
+      {
+        "state": "TX",
+        "examFee": null,
+        "applicationFee": 50
+      }
+    ],
     "massage-therapist": [],
-    "home-inspector": [],
-    "pest-control-applicator": [],
-    "security-guard": []
+    "home-inspector": [
+      {
+        "state": "TX",
+        "examFee": 254,
+        "applicationFee": 120
+      },
+      {
+        "state": "NY",
+        "examFee": null,
+        "applicationFee": 250
+      }
+    ],
+    "pest-control-applicator": [
+      {
+        "state": "FL",
+        "examFee": 300,
+        "applicationFee": null
+      }
+    ],
+    "security-guard": [
+      {
+        "state": "TX",
+        "examFee": null,
+        "applicationFee": 30
+      },
+      {
+        "state": "NY",
+        "examFee": null,
+        "applicationFee": 36
+      }
+    ]
   }
 }
