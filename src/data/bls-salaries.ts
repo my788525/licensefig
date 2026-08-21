@@ -31,4 +31,26 @@ export const BLS_SALARIES: Record<string, BlsSalary> = {
   'pest-control-applicator': { amount: 44560, note: 'pest control workers' },
   'security-guard': { amount: 37160, note: 'security guards' },
   'notary-public': { amount: 0, note: 'notaries' },
+  // ---- Wave 2 occupations (BLS OES May 2025, retrieved 2026-08-21) ----
+  'registered-nurse': { amount: 97550, note: 'registered nurses' },
+  'licensed-practical-nurse': { amount: 64400, note: 'licensed practical and licensed vocational nurses' },
+  pharmacist: { amount: 140910, note: 'pharmacists' },
+  'physical-therapist': { amount: 102760, note: 'physical therapists' },
+  'dental-hygienist': { amount: 98100, note: 'dental hygienists' },
+  electrician: { amount: 63190, note: 'electricians' },
+  plumber: { amount: 63800, note: 'plumbers, pipefitters, and steamfitters' },
+  'hvac-technician': {
+    amount: 61010,
+    note: 'heating, air conditioning, and refrigeration mechanics and installers',
+  },
+  'general-contractor': { amount: 114990, note: 'construction managers' },
+  'professional-engineer': {
+    amount: 104110,
+    note: 'mechanical engineers (BLS does not track professional engineers separately)',
+  },
+  attorney: { amount: 159670, note: 'lawyers' },
+  'certified-public-accountant': { amount: 83680, note: 'accountants and auditors' },
+  emt: { amount: 48150, note: 'EMTs and paramedics (BLS median hourly x 2,080)' },
+  'commercial-driver-license': { amount: 58640, note: 'heavy and tractor-trailer truck drivers' },
+  architect: { amount: 99280, note: 'architects, except landscape and naval' },
 }

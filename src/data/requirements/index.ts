@@ -23,6 +23,22 @@ import { real_estate_appraiserRequirements } from './real-estate-appraiser'
 import { realEstateBrokerRequirements } from './real-estate-broker'
 import { realEstateSalespersonRequirements } from './real-estate-salesperson'
 import { security_guardRequirements } from './security-guard'
+// ---- Wave 2 occupations (2026-08-21) ----
+import { registeredNurseRequirements } from './registered-nurse'
+import { licensedPracticalNurseRequirements } from './licensed-practical-nurse'
+import { pharmacistRequirements } from './pharmacist'
+import { physicalTherapistRequirements } from './physical-therapist'
+import { dentalHygienistRequirements } from './dental-hygienist'
+import { electricianRequirements } from './electrician'
+import { plumberRequirements } from './plumber'
+import { hvacTechnicianRequirements } from './hvac-technician'
+import { generalContractorRequirements } from './general-contractor'
+import { professionalEngineerRequirements } from './professional-engineer'
+import { attorneyRequirements } from './attorney'
+import { certifiedPublicAccountantRequirements } from './certified-public-accountant'
+import { emtRequirements } from './emt'
+import { commercialDriverLicenseRequirements } from './commercial-driver-license'
+import { architectRequirements } from './architect'
 
 export const REQUIREMENTS_BY_OCCUPATION: Record<string, LicenseRequirements[]> = {
   barber: barberRequirements,
@@ -40,6 +56,22 @@ export const REQUIREMENTS_BY_OCCUPATION: Record<string, LicenseRequirements[]> =
   'real-estate-broker': realEstateBrokerRequirements,
   'real-estate-salesperson': realEstateSalespersonRequirements,
   'security-guard': security_guardRequirements,
+  // ---- Wave 2 (2026-08-21) ----
+  'registered-nurse': registeredNurseRequirements,
+  'licensed-practical-nurse': licensedPracticalNurseRequirements,
+  pharmacist: pharmacistRequirements,
+  'physical-therapist': physicalTherapistRequirements,
+  'dental-hygienist': dentalHygienistRequirements,
+  electrician: electricianRequirements,
+  plumber: plumberRequirements,
+  'hvac-technician': hvacTechnicianRequirements,
+  'general-contractor': generalContractorRequirements,
+  'professional-engineer': professionalEngineerRequirements,
+  attorney: attorneyRequirements,
+  'certified-public-accountant': certifiedPublicAccountantRequirements,
+  emt: emtRequirements,
+  'commercial-driver-license': commercialDriverLicenseRequirements,
+  architect: architectRequirements,
 }
 
 /** All rows we have for an occupation (safe — never throws). */
