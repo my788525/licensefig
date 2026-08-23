@@ -1,5 +1,11 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { OCCUPATIONS } from '@/data/types'
+import { homeDescription } from '@/lib/serp_variants'
+
+export const metadata: Metadata = {
+  description: homeDescription(),
+}
 
 export default function HomePage() {
   const faqJsonLd = {

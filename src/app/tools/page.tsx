@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { toolDescription } from '@/lib/serp_variants'
+import ToolFilter from './ToolFilter'
 
 export const metadata: Metadata = {
   title: 'Free Licensing Tools — Track, Plan, Practice & Print',
-  description:
-    'Free printable planning tools for every step of the licensing road: progress tracker, exam countdown, sample questions, flashcards, formula sheets, renewal calculators and more.',
+  description: toolDescription('tools'),
   alternates: { canonical: '/tools/' },
 }
 
@@ -146,11 +147,19 @@ export default function ToolsIndexPage() {
       </nav>
 
       <h1 className="text-3xl font-bold text-slate-900 mb-3">Free licensing tools</h1>
-      <p className="text-slate-600 mb-8 leading-relaxed">
+      <p className="text-slate-600 mb-4 leading-relaxed">
         {TOOLS.length} free, printable tools that cover every step of the licensing road — from “thinking about it”
         (career ROI), through studying (sample questions, flashcards, formula sheets), to exam day and renewal.
         Everything runs in your browser; nothing is stored on our server.
       </p>
+      <div className="flex flex-wrap gap-3 mb-6 text-sm font-semibold text-white">
+        <span className="bg-[#0b2545] rounded-full px-3 py-1.5">Free forever</span>
+        <span className="bg-[#0b2545] rounded-full px-3 py-1.5">No sign-up</span>
+        <span className="bg-[#0b2545] rounded-full px-3 py-1.5">Runs in your browser</span>
+        <span className="bg-[#0b2545] rounded-full px-3 py-1.5">Printable</span>
+      </div>
+
+      <ToolFilter tools={TOOLS} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {TOOLS.map((t) => (
@@ -158,6 +167,7 @@ export default function ToolsIndexPage() {
             key={t.slug}
             href={t.slug}
             className="rounded-2xl border border-slate-200 bg-white p-5 hover:border-indigo-300 hover:shadow-sm transition"
+            data-tool-name={`${t.name} ${t.desc}`}
           >
             <div className="text-2xl mb-2">{t.emoji}</div>
             <div className="font-semibold text-slate-900 text-sm">{t.name}</div>

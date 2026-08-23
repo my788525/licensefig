@@ -18,6 +18,31 @@ const organizationJsonLd = {
     'Free planning resource for the licensing road: state-by-state license requirements, exam structure, costs, pass rates, retake rules and reciprocity for 15 licensed careers.',
 }
 
+const siteLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    organizationJsonLd,
+    {
+      '@type': 'WebSite',
+      '@id': 'https://licensefig.com/#website',
+      url: 'https://licensefig.com',
+      name: 'LicenseFig',
+      publisher: { '@id': 'https://licensefig.com/#organization' },
+      description:
+        'Free planning tools and state-by-state data for 15 licensed careers: requirements, exam structure, costs, pass rates, retake rules and reciprocity.',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://licensefig.com/tools?tool={search_term_string}',
+          queryTemplate: 'tool={search_term_string}',
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+  ],
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://licensefig.com'),
   title: { default: 'LicenseFig — License Requirements & Exam Planning for 15 Licensed Careers', template: '%s | LicenseFig' },
@@ -29,6 +54,23 @@ export const metadata: Metadata = {
     title: 'LicenseFig — The License Road, State by State',
     description: 'Free planning tools and state-by-state data for 15 licensed careers.',
     type: 'website',
+    url: 'https://licensefig.com',
+    siteName: 'LicenseFig',
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'LicenseFig — license requirements, state by state',
+        type: 'image/png',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'LicenseFig — The License Road, State by State',
+    description: 'Free planning tools and state-by-state data for 15 licensed careers.',
+    images: ['/og-default.png'],
   },
 }
 
@@ -38,7 +80,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-[#f8f9fb] text-[#1a2233] antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd) }}
         />
         <header className="bg-white border-b-2 border-[#0b2545] sticky top-0 z-40 no-print">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
