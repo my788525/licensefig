@@ -100,5 +100,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   }
 
+  staticUrls.push({ url: `${baseUrl}/data-library.html`, lastModified: now, changeFrequency: "monthly", priority: 0.6 });
   return [...staticUrls, ...occupationUrls, ...toolUrls, ...guideUrls, ...variantUrls, ...deepUrls]
 }
