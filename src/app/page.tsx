@@ -4,6 +4,7 @@ import { OCCUPATIONS } from '@/data/types'
 import { homeDescription } from '@/lib/serp_variants'
 
 export const metadata: Metadata = {
+  title: `How do I get licensed in my state? Requirements, exam & costs for 15 careers (2026)`,
   description: homeDescription(),
 }
 
