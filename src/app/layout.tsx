@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="bg-[#f8f9fb] text-[#1a2233] antialiased">
-      <Breadcrumbs domain=\"licensefig.com" />
+      <Breadcrumbs domain="licensefig.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteLd) }}
