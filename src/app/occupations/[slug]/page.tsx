@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const occ = getOccupation(OCCUPATIONS.find((o) => o.slug === slug)?.id ?? '')
   if (!occ) return {}
   return {
-    title: `${occ.name} License Requirements by State (2026)`,
+    title: `How Do I Get a ${occ.name} License? Requirements by State (2026)`,
     description: `${occ.name} license requirements in all 50 states: education hours, exam structure, fees, pass rates, retake rules and reciprocity. ${occ.description}`,
     alternates: { canonical: `/occupations/${occ.slug}/` },
   }

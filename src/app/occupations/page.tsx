@@ -4,7 +4,7 @@ import { OCCUPATIONS } from '@/data/types'
 import { toolDescription } from '@/lib/serp_variants'
 
 export const metadata: Metadata = {
-  title: '15 Licensed Careers — Requirements by State',
+  title: 'How Do I Get Licensed? 15 Careers & State Requirements (2026)',
   description: toolDescription('occupations'),
   alternates: { canonical: '/occupations/' },
 }
