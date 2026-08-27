@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import './globals.css'
 import Link from 'next/link'
 import Logo from '@/components/Logo'
@@ -160,7 +160,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
         </footer>
-      </body>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'Dataset',
+      name: 'US Professional Licensing by State Dataset 2026',
+      description: 'Professional licensing dataset: education requirements, exam fees, renewal cycles, reciprocity agreements, and scope of practice for licensed professions (nursing, real estate, contracting, cosmetology, etc.) across all 50 states. Sourced from state licensing boards.',
+      url: 'https://licensefig.com/data/professional-licensing-2026.json',
+      identifier: 'professional-licensing-2026',
+      datePublished: '2026-01-01', dateModified: '2026-08-27',
+      creator: { '@type': 'Organization', name: 'LicenseFig' },
+      publisher: { '@type': 'Organization', name: 'LicenseFig', url: 'https://licensefig.com' },
+      includedInDataCatalog: { '@type': 'DataCatalog', name: 'LicenseFig Data' },
+      distribution: { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: 'https://licensefig.com/data/professional-licensing-2026.json' },
+      spatialCoverage: { '@type': 'Place', name: 'United States' }, temporalCoverage: '2026',
+    }) }} />
+    </body>
     </html>
   )
 }

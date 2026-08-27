@@ -1,0 +1,14 @@
+﻿{
+    "meta":  {
+                 "description":  "Reference dataset for US Professional Licensing by State. Sourced from State licensing boards.",
+                 "source":  "State licensing boards",
+                 "dataYear":  2026,
+                 "note":  "This is a reference dataset for planning and educational purposes. Verify current figures with official sources before making decisions.",
+                 "lastUpdated":  "2026-08-27",
+                 "title":  "US Professional Licensing by State Dataset 2026"
+             },
+    "national":  {
+                     "coverage":  "United States (50 states + DC)",
+                     "lastVerified":  "2026-08-27"
+                 }
+}
