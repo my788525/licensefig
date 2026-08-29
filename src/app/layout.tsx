@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next'
 import './globals.css'
+import { NetworkStrip } from "@/components/NetworkStrip";
 import Link from 'next/link'
 import Logo from '@/components/Logo'
 import { OCCUPATIONS } from '@/data/types'
@@ -108,7 +109,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {children}
 
-        <footer className="bg-[#0b2545] text-slate-300 mt-20 pt-12 pb-10 no-print">
+        <NetworkStrip self="licensefig.com" />
+
+<footer className="bg-[#0b2545] text-slate-300 mt-20 pt-12 pb-10 no-print">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-8 mb-8">
               <div>
