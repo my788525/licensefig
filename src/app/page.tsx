@@ -143,6 +143,22 @@ export default function HomePage() {
             </Link>
           </div>
         </section>
+        <section className="py-12 bg-slate-50">
+          <div className="container">
+            <h2 className="section-title">Popular career paths</h2>
+            <p className="text-slate-500 mt-2 max-w-2xl">
+              High-demand trades with the clearest state-by-state licensing paths.
+            </p>
+            <div className="mt-6">
+              <Link
+                href="/occupations/electrician/"
+                className="inline-flex items-center gap-2 px-5 py-3 bg-[#1b4b8f] text-white text-sm font-semibold rounded-lg hover:bg-[#163d75] transition-colors"
+              >
+                Licensed electrician requirements by state →
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   )
