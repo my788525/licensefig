@@ -159,6 +159,37 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+        <section className="py-12 bg-slate-50">
+          <div className="container">
+            <h2 className="section-title">Browse licenses by pillar</h2>
+            <p className="text-slate-500 mt-2 max-w-2xl">Grouped entry points into our state-by-state requirement matrices.</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+              <div>
+                <h3 className="font-semibold mb-3">Skilled trades</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/occupations/electrician/" className="text-slate-600 hover:text-[#1b4b8f]">Licensed electrician</Link></li>
+                  <li><Link href="/occupations/general-contractor/" className="text-slate-600 hover:text-[#1b4b8f]">General contractor</Link></li>
+                  <li><Link href="/occupations/hvac-technician/" className="text-slate-600 hover:text-[#1b4b8f]">HVAC technician</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-3">Real estate</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/occupations/real-estate-salesperson/" className="text-slate-600 hover:text-[#1b4b8f]">Real estate salesperson</Link></li>
+                  <li><Link href="/occupations/real-estate-broker/" className="text-slate-600 hover:text-[#1b4b8f]">Real estate broker</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-semibold mb-3">Health &amp; insurance</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link href="/occupations/cna/" className="text-slate-600 hover:text-[#1b4b8f]">CNA</Link></li>
+                  <li><Link href="/occupations/insurance-agent-pc/" className="text-slate-600 hover:text-[#1b4b8f]">Insurance agent</Link></li>
+                  <li><Link href="/occupations/notary-public/" className="text-slate-600 hover:text-[#1b4b8f]">Notary public</Link></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   )
