@@ -65,6 +65,14 @@ export default async function OccupationPage({ params }: Props) {
           text: 'Reciprocity varies by occupation and state. Some states honor licenses from listed states; others require additional exams or education. Check the reciprocity note for your state or contact both state boards.',
         },
       },
+      {
+        '@type': 'Question',
+        name: `How much does it cost to get a ${occ.name} license?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Costs vary by state. Most charge a modest application or license fee — often $0 to $120 — and a few states also require a small exam fee. Some occupations add pre-license education tuition. Check the Fees column in the table below for your state, then compare costs across states with the Exam Cost Compare tool.`,
+        },
+      },
     ],
   }
 
@@ -149,7 +157,16 @@ export default async function OccupationPage({ params }: Props) {
           <Link href="/tools/study-plan-generator/" className="px-4 py-2 rounded-lg border border-slate-300 text-sm hover:border-indigo-400">Study plan generator</Link>
           <Link href="/tools/pass-rate-index/" className="px-4 py-2 rounded-lg border border-slate-300 text-sm hover:border-indigo-400">Pass rate index</Link>
           <Link href="/tools/prep-budget/" className="px-4 py-2 rounded-lg border border-slate-300 text-sm hover:border-indigo-400">Prep budget</Link>
+          <Link href="/tools/exam-cost-compare/" className="px-4 py-2 rounded-lg border border-slate-300 text-sm hover:border-indigo-400">Exam cost compare</Link>
         </div>
+
+        {/* Cost — targets "how much does it cost to be a notary" (GSC edge-of-page-2) */}
+        <section className="mt-10">
+          <h2 className="text-xl font-bold mb-3">How much does it cost to get your {occ.name} license?</h2>
+          <p className="text-slate-700 mb-3">
+            Costs vary by state. Most charge a modest application or license fee — often between $0 and $120 — and a handful of states also require a small exam fee. A few occupations add pre-license education tuition. See the <strong>Fees</strong> column in the table below for your state, then compare costs across states with the Exam Cost Compare tool.
+          </p>
+        </section>
 
         {/* State matrix */}
         <div className="overflow-x-auto rounded-xl border border-slate-200">
