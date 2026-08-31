@@ -4,7 +4,7 @@ import { getNetworkStrip } from "./network-sites.mjs";
 // `self` = this site's own domain (e.g. "relofig.com"); it is filtered out and
 // only a themed subset of the network is shown (own category first, capped at
 // MAX_LINKS). All links are nofollow + noopener (SEO-safe cross-site footer).
-export function NetworkStrip({ self }) {
+export function NetworkStrip({ self }: { self: string }) {
   const { items, cats } = getNetworkStrip(self);
   return (
     <section className="network-strip" aria-label="Related tools from our network">
@@ -15,7 +15,7 @@ export function NetworkStrip({ self }) {
           account required.
         </p>
         <div className="net-grid">
-          {cats.map((cat) => {
+          {cats.map((cat: string) => {
             const list = items.filter((i) => i.cat === cat);
             if (!list.length) return null;
             return (
