@@ -39,6 +39,7 @@ export const NETWORK_SITES = [
   { domain: "childsupportfig.com", label: "ChildSupportFig", cat: "Life events", desc: "Child support calculators by state" },
   { domain: "visafig.com", label: "VisaFig", cat: "Life events", desc: "U.S. visa and immigration guides" },
   // Practical tools
+  { domain: "licensefig.com", label: "LicenseFig", cat: "Practical tools", desc: "Professional license and permit requirements by state" },
   { domain: "edcost.com", label: "EdCost", cat: "Practical tools", desc: "College and education cost planning" },
   { domain: "unitfig.com", label: "UnitFig", cat: "Practical tools", desc: "Unit and measurement conversion" },
   { domain: "dayfig.com", label: "DayFig", cat: "Practical tools", desc: "Time zones and date math" },
