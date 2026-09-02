@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const occ = OCCUPATIONS.find((o) => o.slug === occupationSlug)
   if (!occ) return {}
   return {
-    title: `${occ.name} License Reciprocity by State (2026)`,
+    title: `${occ.name} License Reciprocity`,
     description: `Does your ${occ.shortName} license transfer? Reciprocity notes for all 50 states, with official state board links. Data retrieved 2026-08-20.`,
     alternates: { canonical: `/reciprocity/${occ.slug}/` },
   }

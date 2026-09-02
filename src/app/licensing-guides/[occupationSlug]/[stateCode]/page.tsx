@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const st = STATES.find((s) => s.code === stateCode)
   if (!occ || !st) return {}
   return {
-    title: `How to Become a ${occ.name} in ${st.name} (${new Date().getFullYear()})`,
+    title: `${occ.name} in ${st.name}`,
     description: `Step-by-step ${occ.name} licensing guide for ${st.name}: education hours, exam structure, fees, pass rate, retake rules and reciprocity. Official sources, retrieved 2026-08-20.`,
     alternates: { canonical: `/licensing-guides/${occ.slug}/${st.code}/` },
   }
