@@ -163,6 +163,18 @@ export default async function ReciprocityPage({ params }: Props) {
           </div>
         </div>
 
+        {/* Other professions (internal linking) */}
+        <div className="rounded-2xl p-6 mb-10" style={{ background: 'linear-gradient(135deg,#eef2f9,#f7f3e6)' }}>
+          <h2 className="font-display text-lg font-bold mb-3">Compare other professions</h2>
+          <div className="flex flex-wrap gap-2">
+            {OCCUPATIONS.filter((o) => o.slug !== occ.slug).map((o) => (
+              <Link key={o.slug} href={`/reciprocity/${o.slug}/`} className="btn-ghost">
+                {o.shortName} reciprocity
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <p className="text-xs text-slate-400 border-t border-slate-200 pt-4">
           Reciprocity rules change frequently and are set by each state legislature and board. &ldquo;Check both state
           boards&rdquo; means the note is not published in our dataset — it is not a negative answer. Always verify with
