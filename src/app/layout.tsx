@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from 'next'
 import './globals.css'
+import Script from "next/script";
 import { NetworkStrip } from "@/components/NetworkStrip";
 import Link from 'next/link'
 import Logo from '@/components/Logo'
@@ -176,6 +177,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       distribution: { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: 'https://licensefig.com/data/professional-licensing-2026.json' },
       spatialCoverage: { '@type': 'Place', name: 'United States' }, temporalCoverage: '2026',
     }) }} />
+    <Script src="https://www.googletagmanager.com/gtag/js?id=G-BRJD4S7P86" strategy="afterInteractive" />
+    <Script id="ga4-init" strategy="afterInteractive" dangerouslySetInnerHTML={{__html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BRJD4S7P86');`}} />
     </body>
     </html>
   )
